@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  服务器运行多个 Tomcat
+category: ['Tomcat']
+tags: ['Tomcat']
 author: 景阳
 email: jingyang@asiainfo.com
 description: Tomcat
