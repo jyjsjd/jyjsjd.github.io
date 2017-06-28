@@ -13,7 +13,9 @@ description: Tomcat
 
 ## 二、操作步骤
 1、下载 Tomcat，并解压到两个不同的目录。
+
 2、随意启动其中一个 Tomcat，浏览器访问 http://localhost:8080，看到 Tomcat 的默认页面说明启动成功。
+
 3、关键是第二个 Tomcat，在网上搜索了一番，有三个修改server.xml的点都被提到了：
 * 修改默认端口。Tomcat 默认端口是`8080`，要改成其他未被占用端口，如：`8090`。
 ```xml
@@ -29,6 +31,7 @@ description: Tomcat
 ```
 
 做完这3项修改的就启动 Tomcat 的并不会成功，它只会强制关闭第一个启动的Tomcat，最终只能有一个 Tomcat 是运行状态。
+
 4、修改 `tomcat.pid` 文件位置。
 只做前三项修改不会成功启动两个 Tomcat 的原因是，第二个 Tomcat 产生的 pid 文件会覆盖第一个，最终导致第一个 Tomcat 被杀死。所以这里要做的就是防止 pid 文件覆盖，也就是修改默认 pid 文件的位置。
 * 在 Tomcat 的 bin目录下新建文件 `setenv.sh`。修改为：
