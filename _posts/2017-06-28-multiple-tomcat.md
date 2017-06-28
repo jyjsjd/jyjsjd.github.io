@@ -35,10 +35,12 @@ description: Tomcat
 <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
 ```
 
+* 注意点：不要设置 `CATALINA_HOME` 环境变量。
+
 做完这`3`项修改的就启动 Tomcat 的并不会成功，它只会强制关闭第一个启动的Tomcat，最终只能有一个 Tomcat 是运行状态。
 
 4、修改 `tomcat.pid` 文件位置。
-只做前3项修改不会成功启动两个 Tomcat 的原因是，第二个 Tomcat 产生的 `pid` 文件会覆盖第一个，最终导致第一个 Tomcat 被杀死。所以这里要做的就是防止 pid 文件覆盖，也就是修改默认 pid 文件的位置。
+只做前`3`项修改并不能成功启动两个 Tomcat 的原因是第二个 Tomcat 产生的 `pid` 文件会覆盖第一个，最终导致第一个 Tomcat 被杀死。所以这里要做的就是防止 pid 文件`覆盖`，也就是修改默认 pid 文件的位置。
 
 * 在 Tomcat 的 `bin` 目录下新建文件 `setenv.sh`。修改为：
 
@@ -48,6 +50,7 @@ description: Tomcat
 export CATALINA_PID=/var/run/tomcat8/tomcat.pid
 ```
 * 把 setenv.sh 修改为可执行文件：
+
 ```
 chmod 777 setenv.sh
 ```
