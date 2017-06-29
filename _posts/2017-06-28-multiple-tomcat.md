@@ -58,13 +58,13 @@ chmod 777 setenv.sh
 `setenv.sh` 会被 `startup.sh` 调用，我们在里面修改了 pid 文件位置，所以它再也不会覆盖第一个 Tomcat 的 pid 文件。这时候再次启动就能得到两个 Tomcat 了。
 
 ## 更新
-今天关闭 Tomcat 的时候，没有正常关闭，看到一个报错
+今天关闭 Tomcat 的时候，没有正常关闭，看到一个报错：
 ```
 Tomcat did not stop in time.
 PID file was not removed.
 To aid diagnostics a thread dump has been written to standard out.
 ```
-运行 ps aux | grep tomcat 查了一下，两个 Tomcat 都没有关。于是手动杀死了这两个进程。
+运行 ```ps aux | grep tomcat``` 查了一下，两个 Tomcat 都没有关。于是手动杀死了这两个进程。
 
 上网查了一下解决方案，大部分是说要强制关闭，加上参数 `-force`。
 
@@ -72,7 +72,7 @@ To aid diagnostics a thread dump has been written to standard out.
 ```
 exec "$PRGDIR"/"$EXECUTABLE" stop "$@"
 ```
-改成
+改成：
 ```
 exec "$PRGDIR"/"$EXECUTABLE" stop -force "$@"
 ```
