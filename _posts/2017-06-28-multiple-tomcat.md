@@ -35,7 +35,7 @@ description: Tomcat
 <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
 ```
 
-* 注意点：不要设置 `CATALINA_HOME` 环境变量。
+* 注意点：不要设置 `$CATALINA_HOME` 环境变量。
 
 做完这`3`项修改的就启动 Tomcat 的并不会成功，它只会强制关闭第一个启动的Tomcat，最终只能有一个 Tomcat 是运行状态。
 
@@ -64,7 +64,7 @@ Tomcat did not stop in time.
 PID file was not removed.
 To aid diagnostics a thread dump has been written to standard out.
 ```
-运行 ```ps aux | grep tomcat``` 查了一下，两个 Tomcat 都没有关。于是手动杀死了这两个进程。
+运行 ```$ps aux | grep tomcat``` 查了一下，两个 Tomcat 都没有关。于是手动杀死了这两个进程。
 
 上网查了一下解决方案，大部分是说要强制关闭，加上参数 `-force`。
 

@@ -35,7 +35,7 @@ SHOW VARIABLES LIKE '%char%'
 ## 三、时区
 MySQL 默认是跟随系统时间的，顺手看了一下果然是体统时间不对：
 ```
-date
+$date
 ```
 再查看 MySQL 时间：
 ```
@@ -52,7 +52,7 @@ FLUSH PRIVILEGES;
 
 第二更改系统时间，并重启 MySQL：
 ```
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+$cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 ## 后记
