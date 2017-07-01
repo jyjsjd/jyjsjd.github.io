@@ -30,3 +30,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Paging
+paginate: 5
+paginate_path: "page:num"
