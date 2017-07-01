@@ -47,6 +47,7 @@ public @interface UseCase {
 * 注解的元素在定义中表现为`公有方法`。
 * 注解的元素可以有`默认值`，用关键字 `default` 打头 -- 这也是和接口不一样的地方。
 * **可以将一个注解作为另一个注解的元素**。 以下模拟 ORM 对数据表字段的定义：
+
 ```java
 @Target(ElementType.FIELD)
 @Retention(RetentionType.RUNTIME)
@@ -69,6 +70,7 @@ public @interface SQLColumn {
 ## 四、使用注解的信息
 ### 1、反射机制：Class、Method、Field 上都有获得注解的方法。
 仍然以一开头定义的注解为例，要获得某 Class 上的注解：
+
 ```java
 public static void trackUseCases(Class <?> cl) {
   for (Method m: cl.getDeclaredMethods()) {
