@@ -40,3 +40,22 @@ Java 栈是一块`先进后出`的数据结构，方法只有`入栈`和`出栈`
 ![stack.png](/assets/img/stack.png)
 
 ## 三、Java 堆
+几乎所有的对象都放在 Java 堆中。堆是自动管理的，通过垃圾回收，对象会被自动释放。
+
+![heap.png](/assets/img/heap.png)
+
+--------
+
+```
+堆大小 = 新生代 + 老年代
+新生代 = eden + from survivor + to survivor
+
+eden : from : to = 8 : 1 : 1
+new : old = 2 : 1
+
+（比例是可以通过参数调整的）
+```
+
+* eden（伊甸园）：大多数新对象会在 eden 中产生，但是大对象会直接进入老年代。“朝生夕死” 的对象占大多数，很多新对象用完一次就可以被回收。
+* from/to survivor（幸存者）：JVM 仅会使用 eden 和一个幸存者区（这里假设是 from）进行对象分配，另一个幸存者（这里假设是 to）区则会保持清空。在一次 GC（minor GC）之后，幸存的对象会被复制到 to 区域。如果在幸存者区（from）中的对象年龄达到一定阈值就会直接进入老年代； 下次对象分配的时候，eden 和 to 会被使用，而 from 保持清空，循环上一步的过程。
+* 老年代：老年代发生的 GC 是 Full GC（或者叫 stop the world），这里的 GC 动作不像新生代那么频繁。在每次 minor GC 之前，系统会判断老年代的空闲连续空间是否大于新生代所有对象之和，如果这个条件成立，那么MinorGC可以确保是安全的。如果不成立，则虚拟机会查看 HandlePromotionFailure 设置值是否允许担保失败。如果允许，那么会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试这进行一次MinorGC，尽管这次MinorGC 是有风险的；如果小于，或者 HandlePromptionFailure 设置不允许冒险，那这是也要改为进行一次Full GC。
