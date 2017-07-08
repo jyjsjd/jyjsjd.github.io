@@ -1,10 +1,10 @@
 ---
 layout: post
 title: JVM 基本结构
-category: ['JVM']
-tags: ['JVM']
+category: ['Java']
+tags: ['Java']
 author: 景阳
-email: jingyang@asiainfo.com
+email: jyjsjd@hotmail.com
 description: 介绍JVM 基本结构
 ---
 

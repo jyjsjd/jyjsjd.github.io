@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Java 注解笔记
-category: [' Java']
+category: ['Java']
 tags: ['Java']
 author: 景阳
-email: jingyang@asiainfo.com
+email: jyjsjd@hotmail.com
 description: Java 注解笔记
 ---
 

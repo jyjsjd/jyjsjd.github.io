@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  服务器运行多个 Tomcat
-category: ['Tomcat']
-tags: ['Tomcat']
+category: ['Java']
+tags: ['Java']
 author: 景阳
-email: jingyang@asiainfo.com
+email: jyjsjd@hotmail.com
 description: Tomcat
 ---
 
