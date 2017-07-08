@@ -22,4 +22,5 @@ description: 动态代理
 
 ## 参考文献
 [Java 动态代理机制分析及扩展，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-lo-proxy1/index.html)
+
 [Java JDK 动态代理使用及实现原理分析](http://blog.jobbole.com/104433/)
