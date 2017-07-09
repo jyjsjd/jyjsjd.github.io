@@ -18,7 +18,7 @@ description: 动态代理
 2. java.lang.reflect.InvocationHandler：这是调用处理器接口，它自定义了一个 `invoke` 方法，用于集中处理在动态代理类对象上的方法调用，通常在该方法中实现对委托类的`代理访问`。
 3. java.lang.ClassLoader：这是类装载器类，负责将类的字节码装载到 Java 虚拟机（JVM）中并为其定义类对象，然后该类才能被使用。**Proxy 静态方法生成动态代理类同样需要通过类装载器来进行装载才能使用，它与普通类的唯一区别就是其字节码是由 JVM 在运行时`动态`生成的而非预存在于任何一个 .class 文件中**。
 
-![javaproxy.png](/assets/img/javaproxy.png)
+<img src="/assets/img/javaproxy.png" width="800" height="300" alt="markdown logo"/>
 
 ## 参考文献
 [Java 动态代理机制分析及扩展，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-lo-proxy1/index.html)
