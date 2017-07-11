@@ -10,3 +10,4 @@
 * Spring 框架理解
 * Java 常用数据结构总结
 * storm 初步
+* ApplicationContexAware，ApplicationContext 初始化
