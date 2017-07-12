@@ -40,8 +40,9 @@ description: Ehcache 缓存配置
 ## 三、传递拷贝而非引用
 默认情况下 `get()` 方法会取得缓存中数据的**引用**，之后对这个数据的所有改变都会**立刻**反映到缓存中。有些时候用户想要获得一个缓存数据的`拷贝`，对这个拷贝的操作不会影响到缓存。
 
-1. XML 配置： 把 `copyOnRead` 和 `copyOnWrite` 设置为 `true`。
-```
+1. XML 配置： 把 `copyOnRead` 和 `copyOnWrite` 设置为 `true`
+
+```xml
 <cache name="copyCache"
  maxEntriesLocalHeap="10"
  eternal="false"
@@ -52,7 +53,9 @@ description: Ehcache 缓存配置
  <copyStrategy class="com.company.ehcache.MyCopyStrategy"/>
 </cache>
 ```
+
 2. Java 代码中：
+
 ```java
 CacheConfiguration config = new CacheConfiguration("copyCache", 1000).copyOnRead(true).copyOnWrite(true);
 Cache copyCache = new Cache(config);
