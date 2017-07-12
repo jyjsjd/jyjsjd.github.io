@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ehcache 缓存配置（一）
+title: Ehcache（一）缓存配置
 category: ['Java']
 tags: ['Java']
 author: 景阳
