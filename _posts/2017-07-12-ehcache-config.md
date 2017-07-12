@@ -53,10 +53,12 @@ description: Ehcache 缓存配置
 </cache>
 ```
 2. Java 代码中：
+
 ```java
 CacheConfiguration config = new CacheConfiguration("copyCache", 1000).copyOnRead(true).copyOnWrite(true);
 Cache copyCache = new Cache(config);
 ```
+
 ---
 
 在 `get()` 或者 `put()` 方法获得拷贝的时候，可以自定义`拷贝策略`。
