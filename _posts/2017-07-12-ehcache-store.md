@@ -25,32 +25,30 @@ description: Ehcache 存储层次
 * 接受所有数据，无论有没有实现 `Serializable`。
 * `线程安全`。
 * 如果数据量超过了存储最大值：（1）配置了溢出策略，数据可以被保存到其他层级；（2）没有配置，一部分数据被删除。
-
-  内存回收策略：
-  * LRU（最近最少使用）：**默认策略**。缓存的时间戳`离当前时间最远`的将被回收。
-  * LFU（最少被使用）：缓存有一个 hit 值，`值最小`的被回收。
-  * FIFO（先进先出）
+* 内存回收策略：
+  - LRU（最近最少使用）：**默认策略**。缓存的时间戳`离当前时间最远`的将被回收。
+  - LFU（最少被使用）：缓存有一个 hit 值，`值最小`的被回收。
+  - FIFO（先进先出）
 
 2. 磁盘存储
 * 仅能存储实现了 `Serializable` 接口的数据。其他数据会抛出 `NotSerializableException` 异常。
 * 磁盘存储是**可选**的，不一定要配置；如果有多个 CacheManager，也没有必要配置多个磁盘存储路径。
-
-  磁盘存储选项：
-  * localTempSwap：允许缓存存放到磁盘，但重启之后这些**数据就会丢失**。
-  * localRestartable：**重启之后数据不会丢失**，会自动加载到内存中。
+* 磁盘存储选项：
+  - localTempSwap：允许缓存存放到磁盘，但重启之后这些**数据就会丢失**。
+  - localRestartable：**重启之后数据不会丢失**，会自动加载到内存中。
 
   ```xml
   <persistence strategy="localTempSwap" />
   ```
 
-  磁盘存储路径：
-  * user.home：用户 `home` 目录。
-  * user.dir：用户当前的活动目录。
-  * java.io.tmpdir：默认的临时目录。
-  * ehcache.disk.store.dir：命令行中指定的系统属性。
+* 磁盘存储路径：
+  - user.home：用户 `home` 目录。
+  - user.dir：用户当前的活动目录。
+  - java.io.tmpdir：默认的临时目录。
+  - ehcache.disk.store.dir：命令行中指定的系统属性。
 
   ```xml
   <diskStore path="/path/to/store/data"/>
   ```
 
-  禁用磁盘存储：不要在文件里配置 `diskStore`。
+* 禁用磁盘存储：不要在文件里配置 `diskStore`。
