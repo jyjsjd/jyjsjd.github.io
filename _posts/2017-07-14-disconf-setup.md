@@ -79,5 +79,8 @@ description: 搭建 disconf-web 环境
   }
   ```
 
-4. 启动 Tomcat、nginx。
-5. 访问 `http://localhost:8081/`。
+-----
+启动项目
+
+1. 启动 Tomcat、nginx。
+2. 访问 `http://localhost:8081/`。
