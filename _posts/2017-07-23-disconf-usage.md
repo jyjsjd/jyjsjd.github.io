@@ -12,7 +12,8 @@ description: disconf 使用
 
 ### 使用方法
 1. 添加 maven 依赖：
-  ```xml
+
+  ```
   <dependency>
       <groupId>com.baidu.disconf</groupId>
       <artifactId>disconf-client</artifactId>
@@ -59,7 +60,8 @@ description: disconf 使用
   ```
 
 3. 配置文件添加 disconf 支持：
-  ```xml
+  
+  ```
   <context:component-scan base-package="com.example"/>
 
   <aop:aspectj-autoproxy proxy-target-class="true"/> <!-- 必须支持 AOP -->
@@ -75,7 +77,8 @@ description: disconf 使用
   ```
 
 4. 添加要托管的文件：
-  ```xml
+  
+  ```
   <!-- 使用托管方式的disconf配置(无代码侵入, 配置更改会自动reload)-->
   <bean id="configproperties_disconf" class="com.baidu.disconf.client.addons.properties.ReloadablePropertiesFactoryBean">
     <property name="locations">
