@@ -14,7 +14,7 @@ DefaultHandlerExceptionResolver 是 DispatcherServlet **默认**的错误处理�
 如果应用是一个 RESTful API 或者需要自定义错误，可以实现 HandlerExceptionResolver 或者使用 ExceptionHandler 注解等方法。
 
 默认状态下 Spring MVC 异常和状态码的对应关系表：
-<img src="/assets/img/exception.png" width="600" height="800" alt=""/>
+<img src="/assets/img/exception.png" width="600" height="600" alt=""/>
 
 ## 二、自定义情况
 
