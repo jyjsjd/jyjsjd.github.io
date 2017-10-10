@@ -1,6 +1,6 @@
 ---
 layout: post
-title: @RequestMapping 注解的一些用法（一）
+title: RequestMapping 注解的一些用法（一）
 category: ['Spring']
 tags: ['Spring']
 author: 景阳
@@ -8,7 +8,7 @@ email: jyjsjd@hotmail.com
 description: @RequestMapping 注解的一些用法
 ---
 
-## 1、同一 URI 对应不同 Http 方法
+### 1、同一 URI 对应不同 Http 方法
 @RequestMapping 可以使用在类级别上，在类中用 `@GetMapping`、`@PostMapping` 等注解的方法会映射到统一 URL，并对应各自的方法：
 
 ```java
@@ -32,7 +32,7 @@ public class AppointmentsController {
   }
 }
 ```
-## 2、路径参数
+### 2、路径参数
 URL 上可以带`参数`，并且可以有`多个`参数：
 
 ```java
@@ -45,7 +45,7 @@ public class RelativePathUriTemplateController {
 }
 ```
 
-## 3、URL 与 正则表达式
+### 3、URL 与 正则表达式
 URL 上可以使用`正则表达式`：
 
 ```java
@@ -61,7 +61,7 @@ public void handle(@PathVariable String module, @PathVariable String pageName) {
 * 后缀匹配：Spring MVC 默认后缀匹配 `*.`，映射到 `/person` 的 `Controller` 也会隐式地映射到 `/person.*`。
 
 
-## 4、矩阵变量（Matrix Variables）
+### 4、矩阵变量（Matrix Variables）
 矩阵变量可以出现在路径的每个部分，每个变量可以用分号`;`或者逗号`,`分隔，如 "/cars;color=red;year=2012"，或者"color=red,green,blue"：
 
 ```java
