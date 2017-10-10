@@ -96,12 +96,12 @@ public void findPet(@PathVariable String petId, @MatrixVariable int q) {
 
 * 矩阵参数可以保存在 `Map` 中：
 
-```java
-// GET /owners/42;q=11;r=12/pets/21;q=22;s=23
-@GetMapping("/owners/{ownerId}/pets/{petId}") public void findPet(
-  @MatrixVariable MultiValueMap<String, String> matrixVars, 
-  @MatrixVariable(pathVar="petId") MultiValueMap<String, String> petMatrixVars) {
-  // matrixVars: ["q" : [11,22], "r" : 12, "s" : 23] 
-  // petMatrixVars: ["q" : 11, "s" : 23]
-}
-```
+  ```java
+  // GET /owners/42;q=11;r=12/pets/21;q=22;s=23
+  @GetMapping("/owners/{ownerId}/pets/{petId}") public void findPet(
+    @MatrixVariable MultiValueMap<String, String> matrixVars, 
+    @MatrixVariable(pathVar="petId") MultiValueMap<String, String> petMatrixVars) {
+    // matrixVars: ["q" : [11,22], "r" : 12, "s" : 23] 
+    // petMatrixVars: ["q" : 11, "s" : 23]
+  }
+  ```
