@@ -1,0 +1,44 @@
+---
+layout: post
+title: RequestMapping 注解的一些用法（三）
+category: ['Spring']
+tags: ['Spring']
+author: 景阳
+email: jyjsjd@hotmail.com
+description: RequestMapping 注解的一些用法
+---
+
+本文梳理一下使用 `@RequestMapping` 注解的方法能接受的参数。
+
+#### 1、request 或者 response（Servlet API）
+可以是任意 request 或者 response 类型，比如 ServletRequest、HttpServletResponse。
+
+#### 2、session（Servlet API）
+实现了 `HTTPSession` 的类型。这种类型的参数必须对应一个存在的 session，所以它**不能**为 null。
+
+#### 3、Spring 包中的 WebRequest 或 NativeWebRequest
+它们提供了方法访问普通的请求参数（request parameter）和 request/session 属性（attribute）。
+
+#### 4、java.util.Locale
+当前请求的语言设置（locale）；LocaleResolver / LocaleContextResolver 配置了语言信息。
+
+#### 5、java.util.TimeZone (Java 6+) / java.time.ZoneId (Java 8)
+当前请求的时区信息；LocaleContextResolver 配置了时区信息。
+
+#### 6、java.io.InputStream / java.io.Reader
+它们可以访问请求的内容。
+
+#### 7、java.io.OutputStream / java.io.Writer
+它们用来生成响应的内容。
+
+#### 8、org.springframework.http.HttpMethod
+请求方法。
+
+#### 9、java.security.Principal
+当前的已登录用户。
+
+#### 10、java.util.Map / org.springframework.ui.Model / org.springframework.ui.ModelMap
+暴露给网页视图（view） 使用的隐式模型（model）。
+
+#### 11、org.springframework.validation.Errors / org.springframework.validation.BindingResult
+前置方法（preceding command）的验证结果（validation result）。
