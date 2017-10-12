@@ -42,3 +42,24 @@ description: RequestMapping 注解的一些用法
 
 #### 11、org.springframework.validation.Errors / org.springframework.validation.BindingResult
 前置方法（preceding command）的验证结果（validation result）。
+
+#### 12、org.springframework.web.servlet.mvc.support.RedirectAttributes
+在跳转（redirect）中使用的参数。
+
+#### 13、HttpEntity<?>
+整个请求包含请求头和请求体。
+
+#### 14、org.springframework.web.bind.support.SessionStatus
+
+#### 15、org.springframework.web.util.UriComponentsBuilder
+以上两个不太明白，英文也读不太懂...
+
+#### 16、其他参数注解
+* @PathVariable：URI 路径参数。
+* @MatrixVariable：URI 路径中的键值对参数。
+* @RequestParam：查询参数。
+* @RequestHeader：请求头（request header）参数。
+* @RequestPart：请求体中的 `multipart/form-data` 部分。
+* @RequestBody：请求体（request body）参数，用 `HttpMessageConverters` 转换。
+* @SessionAttribute：`session` 的属性参数。
+* @RequestAttribute：请求属性（request attributes）。
