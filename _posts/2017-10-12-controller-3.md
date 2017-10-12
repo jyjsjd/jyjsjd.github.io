@@ -1,14 +1,14 @@
 ---
 layout: post
-title: RequestMapping 注解的一些用法（三）
+title: 有关 RequestMapping 注解的一些事（三）
 category: ['Spring']
 tags: ['Spring']
 author: 景阳
 email: jyjsjd@hotmail.com
-description: RequestMapping 注解的一些用法
+description: 有关 RequestMapping 注解的一些事
 ---
 
-本文梳理一下使用 `@RequestMapping` 注解的方法能接受的参数。
+实际使用中可以发现 `@RequestMapping` 注解的方法能接受各种各样的参数，本文梳理一下它能接受的参数。
 
 #### 1、request 或者 response（Servlet API）
 可以是任意 request 或者 response 类型，比如 ServletRequest、HttpServletResponse。

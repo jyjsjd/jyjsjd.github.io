@@ -1,11 +1,11 @@
 ---
 layout: post
-title: RequestMapping 注解的一些用法（一）
+title: 有关 RequestMapping 注解的一些事（一）
 category: ['Spring']
 tags: ['Spring']
 author: 景阳
 email: jyjsjd@hotmail.com
-description: RequestMapping 注解的一些用法
+description: 有关 RequestMapping 注解的一些事
 ---
 
 ### 1、同一 URI 对应不同 Http 方法
