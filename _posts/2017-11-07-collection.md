@@ -9,4 +9,4 @@ description: 集合类继承关系图
 ---
 
 
-<img src="/assets/img/list.png" width="500" height="400"/>
+<img src="/assets/img/list.png" width="1000" height="800"/>
