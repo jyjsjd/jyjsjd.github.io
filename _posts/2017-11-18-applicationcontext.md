@@ -8,4 +8,4 @@ email: jyjsjd@hotmail.com
 description: ApplicationContext 继承关系
 ---
 
-<img src="/assets/img/list.png" width="800" height="200"/>
+<img src="/assets/img/applicationcontext.png" width="800" height="200"/>
