@@ -86,12 +86,22 @@ public class NonStaticBarInterfaceFactory {
 ```
 
 #### 3、FactoryBean
-FactoryBean 是 Spring 提供的一种可供扩展容器实例化逻辑的接口。
+FactoryBean 是 Spring 提供的一种可供扩展容器实例化逻辑的接口，定义如下：
 
 ```java
 public interface FactoryBean {
-  T getObject() throws Exception; // 实例化对象
+  T getObject() throws Exception; // 实现实例化对象逻辑
   Class<?> getObjectType(); // 返回对象类型
   boolean isSingleton(); // 是否 singleton
 }
 ```
+
+```xml
+<bean id="useFactoryBeanImpl" class="...UseFactoryBeanImpl"> 
+  <property name="someBean"> <ref bean="factoryBeanImpl"/> </property> 
+</bean>
+
+<bean id="factoryBeanImpl" class="...FactoryBeanImpl" />
+```
+
+在 `useFactoryBeanImpl` 中依赖的 `someBean` 是 `FactoryBeanImpl`（实现了 `FactoryBean`），但实际上的类型应该是实现 FactoryBean 的类在 `getObject()` 方法返回的类型。
