@@ -19,11 +19,11 @@ description: Spring 容器启动
 ### 三、干预 BeanFactory 的启动
 Spring 提供了 `BeanFactoryPostProcessor` 的容器扩展机制。该机制允许我们在容器实例化对象**之前**，对注册到容器的 BeanDefinition 信息做**修改**。
 
-![bean.png](/assets/img/bean.png)
+<img src="/assets/img/bean.png" width="800" height="400"/>
 
 常用的实现 `BeanFactoryPostProcessor` 接口的类：
 
-![beanpost.png](/assets/img/beanpost.png)
+<img src="/assets/img/beanpost.png" width="800" height="400"/>
 
 * BeanFactory
 手动应用所有 BeanFactoryPostProcessor：
