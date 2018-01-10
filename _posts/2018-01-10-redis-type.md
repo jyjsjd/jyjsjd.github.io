@@ -217,7 +217,12 @@ typedef struct intset {
   - int32_t类型整数；
   - int64_t类型整数。
 
-每个压缩节点都由 previous_entry_length、encoding、content 组成：
+每个压缩节点都由 `previous_entry_length`、`encoding`、`content` 组成：
+* previous_entry_length：记录前一个节点长度，可以为`1字节`或`5字节`，通过这个属性，程序可以`从表尾向表头`遍历：
+  - 1字节：前一个节点长度小于254字节；
+  - 5字节：前一个节点长度大于等于254字节。
+* content：记录节点保存数据的类型和长度。
+* encoding：保存节点的值。
 
-| --- | --- | --- |
-| previous_entry_length | encoding | content |
+### 连锁更新
+更新节点时，会导致所有节点的previous_entry_length重新扩展。
