@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Java 内存模型的基本原则
+title: JVM的基本原则
 category: ['Java']
 tags: ['Java']
 author: 景阳
 email: jyjsjd@hotmail.com
-description: Java 内存模型的基本原则
+description: JVM的基本原则
 ---
 
 #### 原子性
