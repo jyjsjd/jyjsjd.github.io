@@ -17,7 +17,8 @@ description: JVM的基本原则
 * 指令重排：不会导致**单线程**的语义修改，但会导致**多线程**语义不一致。
 
 #### 可见性
-* volatile：保证变量的写先于读。
+* volatile：变量的写先于读，**保证变量看到的随时是自己的最新值**。
+[volatile关键字的作用、原理](https://monkeysayhi.github.io/2016/11/29/volatile%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%9C%E7%94%A8%E3%80%81%E5%8E%9F%E7%90%86/)
 
 * happens-before：
   - 加锁必然发生于解锁前；
