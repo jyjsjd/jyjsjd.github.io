@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Redis 数据结构和对象
+title: Redis 数据结构
 category: ['数据库']
 tags: ['数据库']
 author: 景阳
 email:  jyjsjd@hotmail.com
-description: Redis 数据结构和对象
+description: Redis 数据结构
 ---
 
 ## 1、简单动态字符串（Simple Dynamic String，SDS）
