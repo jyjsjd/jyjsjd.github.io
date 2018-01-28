@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Java 多线程特性
+title: Java 多线程要素
 category: ['Java']
 tags: ['Java']
 author: 景阳
 email: jyjsjd@hotmail.com
-description: Java 多线程特性
+description: Java 多线程要素
 ---
 
 #### 原子性
