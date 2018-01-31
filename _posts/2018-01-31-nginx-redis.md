@@ -22,6 +22,7 @@ description: Nginx 实现访问限速功能
 
 ----
 
+操作步骤：
 * 克隆项目到本地。
 * 编译 `c` 文件为 `so` 文件：
 `gcc redis_slot.c -fPIC -shared -o redis_slot.so`
