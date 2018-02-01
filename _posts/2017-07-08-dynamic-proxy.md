@@ -20,6 +20,15 @@ description: 动态代理
 
 <img src="/assets/img/javaproxy.png" width="800" height="300" alt="markdown logo"/>
 
+## 三、步骤
+1. 实现 InvocationHandler 接口创建自己的调用处理器；
+2. 为 Proxy 类指定 ClassLoader 对象和一组 interface 创建动态代理类；
+3. 通过反射机制获得动态代理类的构造函数，其唯一参数类型是调用处理器接口类型；
+4. 通过构造函数创建动态代理类实例，构造时调用处理器对象作为参数被传入。
+
+## 四、缺点
+仅支持 interface 代理。
+
 ## 参考文献
 [Java 动态代理机制分析及扩展，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-lo-proxy1/index.html)
 
