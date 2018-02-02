@@ -23,7 +23,7 @@ ClassLoader 分为`引导类加载器`和其他应用开发人员编写的加载
 
 除了引导类加载器外，所有的类加载器都有一个`父类加载器`。
 
-![classloader.png](/assets/img/classloader.png)
+<img src="/assets/img/classloader.png" width="500" height="1000"/>
 
 #### 3、双亲委派模型
 ##### 工作的过程
@@ -41,7 +41,7 @@ ClassLoader 分为`引导类加载器`和其他应用开发人员编写的加载
 
 判断两个类是否相同的时候用的是`类的定义加载器`，也就是说哪个加载器启动类的加载过程不重要，重要的是最终定义这个类的加载器。
 
-![loadclass.png](/assets/img/loadclass.png)
+<img src="/assets/img/loadclass.png" width="500" height="1000"/>
 
 #### 5、参考
 [双亲委派模型与自定义类加载器](http://www.importnew.com/24036.html)
