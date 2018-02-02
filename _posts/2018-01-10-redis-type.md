@@ -88,7 +88,7 @@ typedef struct dictEntry {
 } dictEntry;
 ```
 
-![redis_hash.png](/assets/img/redis_hash.png)
+<img src="/assets/img/redis_hash.png" width="500" height="500"/>
 
 * 字典：
   - ht 属性是包含*两个*项的数组，字典只使用 `ht[0]`，`ht[1]` 只会在对 ht[0] `rehash` 时使用;
@@ -112,7 +112,6 @@ typedef struct dictType {
 }
 ```
 
-![redis_dict.png](/assets/img/redis_dict.png)
 <img src="/assets/img/redis_dict.png" width="600" height="500"/>
 
 ### （2）哈希算法
