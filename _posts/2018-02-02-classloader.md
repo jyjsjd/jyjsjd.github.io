@@ -23,7 +23,7 @@ ClassLoader 分为`引导类加载器`和其他应用开发人员编写的加载
 
 除了引导类加载器外，所有的类加载器都有一个`父类加载器`。
 
-<img src="/assets/img/classloader.png" width="500" height="1000"/>
+<img src="/assets/img/classloader.png" width="700" height="1000"/>
 
 #### 3、双亲委派模型
 ##### 工作的过程

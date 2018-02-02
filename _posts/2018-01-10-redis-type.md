@@ -22,7 +22,7 @@ struct {
 
 ```
 
-![redis_str.png](/assets/img/redis_str.png)
+<img src="/assets/img/redis_str.png" width="1000" height="500"/>
 
 ### （2）减少修改字符串带来的内存重分配次数
 * 空间预分配：
@@ -56,7 +56,7 @@ typedef struct listNode {
 }
 ```
 
-![redis_list.png](/assets/img/redis_list.png)
+<img src="/assets/img/redis_list.png" width="1000" height="700"/>
 
 ## 3、字典
 ### （1）结构
@@ -175,7 +175,7 @@ typedef struct zskiplist {
 } zskiplist;
 ```
 
-![redis_skiplist.png](/assets/img/redis_skiplist.png)
+<img src="/assets/img/redis_skiplist.png" width="1000" height="600"/>
 
 ## 5、整数集合
 ### （1）结构
