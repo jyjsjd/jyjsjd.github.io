@@ -122,6 +122,7 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 4. HandlerAdapter===》调用真正的 Handler 方法，并返回一个 ModelAndView 对象。
 5. ModelAndView 的逻辑视图名===》ViewResolver， `ViewResolver` 将把逻辑视图名解析为具体的 View。
 6. View===》渲染，View 会根据传进来的 Model 模型数据进行渲染，此处的 Model 实际是一个 Map 数据结构。
+
 ----
 
 `<mvc:default-servlet-handler/>`：Spring MVC上下文中定义一个org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler，它会像一个检查员，对进入DispatcherServlet的URL进行筛查，如果发现是静态资源的请求，就将该请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理。
