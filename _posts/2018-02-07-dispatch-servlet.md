@@ -11,6 +11,7 @@ description: SpringMVC 核心架构
 <img src="/assets/img/dispatch.png" width="800" height="330"/>
 
 ----
+
 ```java
 protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
   HttpServletRequest processedRequest = request;
@@ -106,8 +107,8 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 ```
 ----
 
-1. 用户发送请求===》DispatcherServlet，前端控制器收到请求后自己不处理，而是委托给其他解析器处理，自己作为统一访问点，进行全局控制。
-2. DispatcherServlet===》HandlerMapping，HandlerMapping 会把请求映射为 `HandlerExecutionChain（包含一个Handler 和多个拦截器）`。
+1. 用户发送请求--->DispatcherServlet，前端控制器收到请求后自己不处理，而是委托给其他解析器处理，自己作为统一访问点，进行全局控制。
+2. DispatcherServlet--->HandlerMapping，HandlerMapping 会把请求映射为 `HandlerExecutionChain（包含一个Handler 和多个拦截器）`。
 ```java
 public class HandlerExecutionChain {
   private final Object handler;
@@ -118,10 +119,10 @@ public class HandlerExecutionChain {
 }
 ```
 
-3. DispatcherServlet===》HandlerAdapter，HandlerAdapter 会把处理器 `Handler` 包装为适配器，从而支持多种类型的处理器。
-4. HandlerAdapter===》调用真正的 Handler 方法，并返回一个 ModelAndView 对象。
-5. ModelAndView 的逻辑视图名===》ViewResolver， `ViewResolver` 将把逻辑视图名解析为具体的 View。
-6. View===》渲染，View 会根据传进来的 Model 模型数据进行渲染，此处的 Model 实际是一个 Map 数据结构。
+3. DispatcherServlet--->HandlerAdapter，HandlerAdapter 会把处理器 `Handler` 包装为适配器，从而支持多种类型的处理器。
+4. HandlerAdapter--->调用真正的 Handler 方法（handle），并返回一个 `ModelAndView` 对象。
+5. ModelAndView的`逻辑视图名`--->ViewResolver， `ViewResolver` 将把逻辑视图名解析为具体的 `View`。
+6. View--->渲染，View 会根据传进来的 Model 模型数据进行渲染，此处的 Model 实际是一个 Map 数据结构。
 
 ----
 
