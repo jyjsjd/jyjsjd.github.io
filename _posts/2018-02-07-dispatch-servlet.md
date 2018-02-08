@@ -108,15 +108,15 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 
 1. 用户发送请求===》DispatcherServlet，前端控制器收到请求后自己不处理，而是委托给其他解析器处理，自己作为统一访问点，进行全局控制。
 2. DispatcherServlet===》HandlerMapping，HandlerMapping 会把请求映射为 `HandlerExecutionChain（包含一个Handler 和多个拦截器）`。
-  ```java
-  public class HandlerExecutionChain {
-    private final Object handler;
-    private HandlerInterceptor[] interceptors;
-    private List<HandlerInterceptor> interceptorList;
+```java
+public class HandlerExecutionChain {
+  private final Object handler;
+  private HandlerInterceptor[] interceptors;
+  private List<HandlerInterceptor> interceptorList;
     
     ...
-  }
-  ```
+}
+```
 
 3. DispatcherServlet===》HandlerAdapter，HandlerAdapter 会把处理器 `Handler` 包装为适配器，从而支持多种类型的处理器。
 4. HandlerAdapter===》调用真正的 Handler 方法，并返回一个 ModelAndView 对象。
