@@ -1,3 +1,16 @@
+---
+layout: post
+title: BeanUtils 和 BeanCopier 性能比较
+category: ['Java']
+tags: ['Java']
+author: 景阳
+email: jyjsjd@hotmail.com
+description: BeanUtils 和 BeanCopier 性能比较
+
+---
+
+
+
 `BeanUtils` 和 `BeanCopier` 是公司内部用来进行 `DTO`、`Entity` 和 `VO` 属性拷贝的工具类，本文是对他们的实现原理和性能做一个简单比较。
 
 ----
