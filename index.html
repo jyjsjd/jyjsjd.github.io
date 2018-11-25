@@ -19,9 +19,9 @@ group: navigation
 
 <ul class="pager">
   {% if paginator.previous_page %}
-      <li class="previous"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer</a></li>
+      <li class="previous"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | prepend 'https://' }}">&larr; Newer</a></li>
   {% endif %}
     {% if paginator.next_page %}
-      <li class="next"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older &rarr;</a></li>
+      <li class="next"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | prepend 'https://'}}">Older &rarr;</a></li>
   {% endif %}
 </ul>
