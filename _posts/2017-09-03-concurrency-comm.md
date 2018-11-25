@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 进程间通信
 category: ['Java']
 tags: ['Java']

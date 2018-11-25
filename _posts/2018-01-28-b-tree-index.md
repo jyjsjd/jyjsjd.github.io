@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: MySQL 索引
 category: ['Java']
 tags: ['Java']

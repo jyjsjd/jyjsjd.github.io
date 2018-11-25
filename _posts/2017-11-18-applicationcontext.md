@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ApplicationContext 继承关系
 category: ['Spring']
 tags: ['Spring']

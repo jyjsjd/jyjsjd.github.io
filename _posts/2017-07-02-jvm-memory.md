@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: JVM 基本结构
 category: ['Java']
 tags: ['Java']

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 双亲委派模型
 category: ['Java']
 tags: ['Java']

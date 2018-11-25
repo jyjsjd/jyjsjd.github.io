@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: SpringMVC 核心架构
 category: ['Java']
 tags: ['Java']

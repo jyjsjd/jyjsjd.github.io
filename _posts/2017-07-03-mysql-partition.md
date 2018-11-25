@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: MySQL 分区表
 category: ['MySQL']
 tags: ['MySQL']

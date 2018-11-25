@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 同一个 JVM 不能出现两个同名的 ehcache CacheManager
 category: ['Java']
 tags: ['Java']

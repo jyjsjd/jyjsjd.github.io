@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Java 多线程要素
 category: ['Java']
 tags: ['Java']

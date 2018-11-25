@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: ThreadLocal
 category: ['Java']
 tags: ['Java']

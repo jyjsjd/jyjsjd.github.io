@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Java 位移运算
 category: ['Java']
 tags: ['Java']

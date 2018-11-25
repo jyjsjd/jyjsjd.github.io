@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 2017年的面试
 category: ['面试']
 tags: ['面试']

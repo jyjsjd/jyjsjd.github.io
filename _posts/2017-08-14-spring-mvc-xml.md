@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Spring MVC 配置文件
 category: ['Java']
 tags: ['Java']

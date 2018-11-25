@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 多线程的一些概念
 category: ['Java']
 tags: ['Java']

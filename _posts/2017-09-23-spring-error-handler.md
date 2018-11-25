@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title:  Spring MVC 全局错误处理的几种方法
 category: ['Java']
 tags: ['Java']

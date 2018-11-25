@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Redis 数据结构
 category: ['数据库']
 tags: ['数据库']

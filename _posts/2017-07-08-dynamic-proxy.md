@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Java 动态代理
 category: ['design pattern']
 tags: ['design pattern']

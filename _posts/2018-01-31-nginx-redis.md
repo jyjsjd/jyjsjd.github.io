@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Nginx 实现访问限速功能
 category: ['Nginx']
 tags: ['Nginx']

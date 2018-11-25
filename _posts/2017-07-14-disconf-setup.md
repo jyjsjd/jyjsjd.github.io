@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 搭建 disconf-web 环境
 category: ['Java']
 tags: ['Java']

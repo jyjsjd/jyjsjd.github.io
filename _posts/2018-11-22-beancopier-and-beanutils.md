@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: BeanUtils 和 BeanCopier 性能比较
 category: ['Java']
 tags: ['Java']

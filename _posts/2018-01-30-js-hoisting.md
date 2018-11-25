@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: JavaScript 变量提升
 category: ['JavaScript']
 tags: ['JavaScript']

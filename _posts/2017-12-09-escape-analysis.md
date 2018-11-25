@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 逃逸分析
 category: ['Java']
 tags: ['Java']

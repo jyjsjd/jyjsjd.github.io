@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 内置锁和 ReentrantLock 的区别
 category: ['Java']
 tags: ['Java']

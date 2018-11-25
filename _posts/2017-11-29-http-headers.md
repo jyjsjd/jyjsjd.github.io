@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 漏洞扫描报告的缺失响应头
 category: ['Http']
 tags: ['Http']

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: disconf 使用
 category: ['Java']
 tags: ['Java']

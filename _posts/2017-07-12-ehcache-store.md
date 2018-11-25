@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ehcache（二）存储层次
 category: ['Java']
 tags: ['Java']

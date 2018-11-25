@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 安装 MySQL 时要注意的设置
 category: ['MySQL']
 tags: ['MySQL']

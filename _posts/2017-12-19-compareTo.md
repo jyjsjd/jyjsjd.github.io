@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Comparable 和 Comparator
 category: ['Java']
 tags: ['Java']

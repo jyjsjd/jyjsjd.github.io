@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Java 注解笔记
 category: ['Java']
 tags: ['Java']

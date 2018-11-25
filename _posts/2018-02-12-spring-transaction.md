@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Spring事务隔离和事务传播
 category: ['Java']
 tags: ['Java']

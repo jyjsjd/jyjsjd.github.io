@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Zookeeper 和 Kafka 的类比
 category: ['Java']
 tags: ['Java']

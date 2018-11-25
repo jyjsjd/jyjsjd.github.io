@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 有关 RequestMapping 注解的一些事（一）
 category: ['Spring']
 tags: ['Spring']

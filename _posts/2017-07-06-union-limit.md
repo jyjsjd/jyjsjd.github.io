@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: UNION 和 LIMIT 1
 category: ['MySQL']
 tags: ['MySQL']

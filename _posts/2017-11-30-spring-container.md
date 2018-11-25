@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Spring 容器启动
 category: ['Spring']
 tags: ['Spring']

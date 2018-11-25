@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Python 中的下划线
 category: ['Python']
 tags: ['Python']

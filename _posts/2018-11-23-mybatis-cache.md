@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: MyBatis 缓存
 category: ['MyBatis']
 tags: ['MyBatis']

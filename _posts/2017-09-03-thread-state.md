@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title:  Java 线程的状态及切换
 category: ['Java']
 tags: ['Java']

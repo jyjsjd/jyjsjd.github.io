@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Ehcache（一）缓存配置
 category: ['Java']
 tags: ['Java']

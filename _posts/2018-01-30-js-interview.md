@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 一道 JavaScript 面试题
 category: ['JavaScript']
 tags: ['JavaScript']

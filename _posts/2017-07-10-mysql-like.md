@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: MySQL LIKE 关键字
 category: ['MySQL']
 tags: ['MySQL']

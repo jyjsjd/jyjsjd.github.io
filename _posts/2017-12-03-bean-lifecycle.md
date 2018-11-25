@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Spring中Bean的一生
 category: ['Spring']
 tags: ['Spring']

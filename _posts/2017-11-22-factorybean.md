@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Spring 工厂方法与 FactoryBean
 category: ['Spring']
 tags: ['Spring']

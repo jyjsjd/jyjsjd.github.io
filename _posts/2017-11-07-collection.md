@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: 集合类继承关系图
 category: ['Java']
 tags: ['Java']
