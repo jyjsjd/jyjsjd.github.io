@@ -31,7 +31,7 @@ mybatis:
 
 每个`SqlSession`中持有了`Executor`，`Executor`中有一个`LocalCache`。当用户发起查询时，`MyBatis`根据当前执行的语句生成`MappedStatement`，在`Local Cache`进行查询，如果缓存命中的话，直接返回结果给用户，如果缓存没有命中的话，查询数据库，结果写入`Local Cache`，最后返回结果给用户。
 
-![2017-11-23-16-13-29](../assets/img/2017-11-23-16-13-29.jpg)
+![2017-11-23-16-13-29](/assets/img/2017-11-23-16-13-29.jpg)
 
 
 
@@ -115,13 +115,13 @@ private void flushCacheIfRequired(MappedStatement ms) {
 
 ```Cache cache = ms.getCache()```获取缓存时查看 cache 到底是什么：
 
-![debug](../assets/img/debug.png)
+![debug](/assets/img/debug.png)
 
 因为我没有指定 cache 类型，最终使用了默认的`PerpetualCache`。
 
 使用缓存时，就是直接调用 `Cache` 接口定义的方法，如获得缓存调用 `getObject`、删除调用 `removeObject`：
 
-![cache-uml](../assets/img/cache-uml.png)
+![cache-uml](/assets/img/cache-uml.png)
 
 ----
 

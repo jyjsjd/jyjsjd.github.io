@@ -1,9 +1,9 @@
 # Jekyll Defaults
 title: 我的学习记录
 description: 一个中年人的学习记录
-baseurl: "https://jyjsjd.github.io/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 
-url: "https://jyjsjd.github.io/"
+url: "https://github.com/jyjsjd"
 github: https://github.com/jyjsjd
 highlighter: rouge
 markdown: kramdown
