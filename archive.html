@@ -15,7 +15,7 @@ layout: blank
         <header><h1>{{ post.date | date: '%Y' }}</h1></header>
       {%- endif -%}
       <li>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
         <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
       </li>
     {%- endfor -%}
