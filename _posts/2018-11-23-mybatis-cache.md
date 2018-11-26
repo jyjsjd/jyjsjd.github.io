@@ -181,21 +181,21 @@ CacheKey 的规则和一级缓存还是一样的。
 
   ```xml
   <!-- 开启基于redis的二级缓存 -->
-  <cache type="com.shein.cache.util.RedisCache"/>
+  <cache type="com.xxx.cache.util.RedisCache"/>
   ```
 
 * 在查询上标记是否使用、刷新缓存：
 
   ```xml
   <!--使用缓存-->
-  <select id="select" resultType="com.shein.cache.dao.model.Product" useCache="true">
+  <select id="select" resultType="com.xxx.cache.dao.model.Product" useCache="true">
       SELECT *
       FROM products
       WHERE id = #{id}
   </select>
   
   <!--刷新缓存-->
-  <update id="update" parameterType="com.shein.cache.dao.model.Product" flushCache="true">
+  <update id="update" parameterType="com.xxx.cache.dao.model.Product" flushCache="true">
      UPDATE products
      SET name = #{name}, price = #{price}
      WHERE id = #{id}
