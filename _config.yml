@@ -23,7 +23,7 @@ comments:
 
 links: # see http://fontawesome.io/icons/#brand for all possible icons
   - github: "https://github.com/jyjsjd"
-  - envelope: "jyjsjd#hotmail.com"
+  - envelope: "anlqc2pkQGhvdG1haWwuY29t"
 
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
 sass: {style: expanded}
