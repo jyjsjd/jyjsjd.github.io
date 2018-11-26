@@ -21,7 +21,7 @@ Spring 提供了 `BeanFactoryPostProcessor` 的容器扩展机制。该机制允
 
 常用的实现 `BeanFactoryPostProcessor` 接口的类：
 
-<img src="/assets/img/beanpost.png" width="800" height="400"/>
+![beanpost](/assets/img/beanpost.png)
 
 * BeanFactory
 手动应用所有 BeanFactoryPostProcessor：

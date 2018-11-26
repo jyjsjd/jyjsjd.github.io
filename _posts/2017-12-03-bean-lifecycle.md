@@ -8,7 +8,7 @@ email: jyjsjd@hotmail.com
 description: Spring中Bean的一生
 ---
 
-<img src="/assets/img/bean.png" width="800" height="400"/>
+![bean](/assets/img/bean.png)
 
 ### 一、Bean 实例化策略——BeanWrapper
 容器通过策略模式决定以何种方式实例化 Bean，通常通过*反射*或*CGLIB*。实例化策略模式的接口是 `InstantiationStrategy`。
@@ -18,7 +18,7 @@ description: Spring中Bean的一生
 
 `BeanWrapper` 的实现类 `BeanWrapperImpl` 同时直接或间接地继承了 `PropertyEditorRegistry` 和 `TypeConverter`，可以用到 `CustomEditorConfigurer` 转换类型。
 
-<img src="/assets/img/beanwrapper.png" width="800" height="400"/>
+![beanwrapper](/assets/img/beanwrapper.png)
 
 ### 二、Aware 接口
 当对象实例化完成并且相关属性和依赖设置完成之后，Spring 容器会检查当前实例对象是否实现了一系列 *Aware* 接口，并把 Aware 接口定义的依赖注入进去。

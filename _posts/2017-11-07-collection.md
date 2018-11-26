@@ -8,5 +8,4 @@ email: jyjsjd@hotmail.com
 description: 集合类继承关系图
 ---
 
-
-<img src="/assets/img/list.png" width="800" height="640"/>
+![list](/assets/img/list.png)
