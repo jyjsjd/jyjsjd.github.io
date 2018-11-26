@@ -22,7 +22,7 @@ struct {
 
 ```
 
-![redis_str](/assets/img/redis_str.pn)
+![redis_str](/assets/img/redis_str.png)
 
 #### （2）减少修改字符串带来的内存重分配次数
 * 空间预分配：
@@ -56,7 +56,7 @@ typedef struct listNode {
 }
 ```
 
-![redis_list](/assets/img/redis_list.pn)
+![redis_list](/assets/img/redis_list.png)
 
 ### 3、字典
 #### （1）结构
@@ -88,7 +88,7 @@ typedef struct dictEntry {
 } dictEntry;
 ```
 
-![redis_hash](/assets/img/redis_hash.pn)
+![redis_hash](/assets/img/redis_hash.png)
 
 * 字典：
   - ht 属性是包含*两个*项的数组，字典只使用 `ht[0]`，`ht[1]` 只会在对 ht[0] `rehash` 时使用;
@@ -112,7 +112,7 @@ typedef struct dictType {
 }
 ```
 
-![redis_dict](/assets/img/redis_dict.pn)
+![redis_dict](/assets/img/redis_dict.png)
 
 #### （2）哈希算法
 * 将一个新的键值对添加到字典时，首先根据`键`计算出`哈希值`和`索引值`，然后再根据`索引值`将包含键值对的节点放到哈希表数组的指定索引上；
@@ -175,7 +175,7 @@ typedef struct zskiplist {
 } zskiplist;
 ```
 
-![redis_skiplist](/assets/img/redis_skiplist.pn)
+![redis_skiplist](/assets/img/redis_skiplist.png)
 
 ### 5、整数集合
 #### （1）结构
