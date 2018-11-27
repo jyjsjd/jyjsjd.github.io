@@ -1,5 +1,4 @@
 ---
-
 title: MyBatis 缓存
 category: ['MyBatis']
 tags: ['MyBatis']
@@ -33,11 +32,56 @@ mybatis:
 
 ![2017-11-23-16-13-29](/assets/img/2017-11-23-16-13-29.jpg)
 
-
-
 `MappedStatement`的`Id`、SQL的`offset`、SQL的`limit`、`SQL`本身以及SQL中的`参数`传入了CacheKey这个类，最终构成CacheKey。只要两条SQL的下列五个值相同，即可以认为是相同的SQL：
 
-``Statement Id + Offset + Limit + Sql + Params``
+``Statement Id + Offset + Limit + Sql + Params + environment``
+
+`BaseExecutor`中创建`CacheKey`的方法：
+
+```java
+public CacheKey createCacheKey(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql) {
+    if (closed) {
+      throw new ExecutorException("Executor was closed.");
+    }
+    CacheKey cacheKey = new CacheKey();
+    // Statement Id
+    cacheKey.update(ms.getId());
+    // Offset
+    cacheKey.update(rowBounds.getOffset());
+    // Limit
+    cacheKey.update(rowBounds.getLimit());
+    // Sql
+    cacheKey.update(boundSql.getSql());
+    List<ParameterMapping> parameterMappings = boundSql.getParameterMappings();
+    TypeHandlerRegistry typeHandlerRegistry = ms.getConfiguration().getTypeHandlerRegistry();
+
+    // Params
+    for (ParameterMapping parameterMapping : parameterMappings) {
+      if (parameterMapping.getMode() != ParameterMode.OUT) {
+        Object value;
+        String propertyName = parameterMapping.getProperty();
+        if (boundSql.hasAdditionalParameter(propertyName)) {
+          value = boundSql.getAdditionalParameter(propertyName);
+        } else if (parameterObject == null) {
+          value = null;
+        } else if (typeHandlerRegistry.hasTypeHandler(parameterObject.getClass())) {
+          value = parameterObject;
+        } else {
+          MetaObject metaObject = configuration.newMetaObject(parameterObject);
+          value = metaObject.getValue(propertyName);
+        }
+        cacheKey.update(value);
+      }
+    }
+    if (configuration.getEnvironment() != null) {
+	  // environment
+      cacheKey.update(configuration.getEnvironment().getId());
+    }
+    return cacheKey;
+  }
+```
+
+
 
 ----
 
@@ -275,4 +319,6 @@ Spring的缓存是围绕切面构建的，所有注解都能运用在方法或�
 [聊聊MyBatis缓存机制](https://tech.meituan.com/mybatis_cache.html)
 
 [Spring实战](https://book.douban.com/subject/24714203/)
+
+[Mybatis 缓存系统源码解析](https://my.oschina.net/mengyuankan/blog/2960728)
 
