@@ -13,7 +13,7 @@
 {% feed_meta %}
 {% if site.comments.disqus and page.comments %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso and page.comments %}<script data-isso="http://{{ site.comments.isso }}" src="//{{ site.comments.isso }}/js/embed.min.js"></script>{% endif %}
-{% if page.mermaid %}
+
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -47,7 +47,7 @@
     }
   });
 </script>
-{% endif %}
+
 <header>
   <h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
   <nav>
