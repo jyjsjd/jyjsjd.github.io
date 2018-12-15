@@ -8,7 +8,7 @@ email: jyjsjd@hotmail.com
 description: Spring事务隔离级别和事务传播
 ---
 
-#### TransactionDefinition接口
+#### 1. TransactionDefinition接口
 TransactionDefinition接口定义了 Spring 中与事务有关的属性和方法：
 
 ```java
@@ -39,14 +39,14 @@ public interface TransactionDefinition {
 }
 ```
 
-#### 事务隔离级别
+#### 2. 事务隔离级别
 * TransactionDefinition.ISOLATION_DEFAULT：默认值，表示使用底层数据库的默认隔离级别。对于大多数数据库来说就是 TransactionDefinition.ISOLATION_READ_COMMITTED（读已提交）。
 * TransactionDefinition.ISOLATION_READ_UNCOMMITTED：读未提交，代表一个事务可以读取另一个事务修改但未提交的数据。该级别会导致脏读和不可重复读。
 * TransactionDefinition.ISOLATION_READ_COMMITTED：读已提交，代表一个事务只可以读另一个事务已提交修改。该级别可以防止脏读。
 * TransactionDefinition.ISOLATION_REPEATABLE_READ：可以重复读，代表一个事务可多次执行同一个查询，并且每次结果都一样。该级别可以防止脏读和不可重复读。
 * TransactionDefinition.ISOLATION_SERIALIZABLE：可串行化，所有事务依次逐个执行，可防止脏读、不可重复读和幻读。
 
-#### 事务传播属性
+#### 3. 事务传播属性
 所谓事务的传播行为是指，如果在开始当前事务之前，一个事务上下文已经存在，此时有若干选项可以指定一个事务性方法的执行行为。
 * TransactionDefinition.PROPAGATION_REQUIRED：如果当前存在事务，则加入该事务；如果当前没有事务，则新建事务。
 * TransactionDefinition.PROPAGATION_REQUIRES_NEW：创建一个新事务，如果当前存在事务，则把当前事务`挂起`。
