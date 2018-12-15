@@ -1,7 +1,7 @@
 ---
 title: MySQL 索引
-category: ['MySQL']
-tags: ['MySQL']
+category: ['Java']
+tags: ['Java']
 author: 景阳
 email: jyjsjd@hotmail.com
 description: MySQL 索引
