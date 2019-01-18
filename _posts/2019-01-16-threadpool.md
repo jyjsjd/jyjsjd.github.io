@@ -86,11 +86,11 @@ description: ThreadPoolExecutor 注释翻译
 *` TERMINATED`：`terminated()` 方法调用结束。
 
 这些状态值可以顺序比较，`runState` 的状态单调递增，但可能不会到达每个状态值。可能的状态转换如下：
-* RUNNING -> SHUTDOWN：`shutdown()` 方法调用之后，可能隐式包含在 `finalize()` 方法中。
-* (RUNNING or SHUTDOWN) -> STOP：调用 `shutdownNow()` 方法。
-* SHUTDOWN -> TIDYING：当队列和线程池都为空时。
-* STOP -> TIDYING：当线程池为空时。
-* TIDYING -> TERMINATED：`terminated()` 方法调用结束时。
+* `RUNNING -> SHUTDOWN`：`shutdown()` 方法调用之后，可能隐式包含在 `finalize()` 方法中。
+*`(RUNNING or SHUTDOWN) -> STOP`：调用 `shutdownNow()` 方法。
+* `SHUTDOWN -> TIDYING`：当队列和线程池都为空时。
+* `STOP -> TIDYING`：当线程池为空时。
+* `TIDYING -> TERMINATED`：`terminated()` 方法调用结束时。
 
 ## 状态值
 
@@ -112,7 +112,7 @@ description: ThreadPoolExecutor 注释翻译
     private static final int TERMINATED =  3 << COUNT_BITS;
 ```
 
-ThreadPoolExecutor 线程池的大小（`workerCount`）和线程池状态（`runState`）用一个 `int` 的长度（32）来表示，前3位代表线程池状态，后29位代表线程池大小。
+ThreadPoolExecutor 线程池的大小（`workerCount`）和线程池状态（`runState`）用一个 `int` 的长度（32）来表示，前`3`位代表线程池状态，后`29`位代表线程池大小。
 
 ## 构造器
 
@@ -168,18 +168,18 @@ ThreadPoolExecutor 线程池的大小（`workerCount`）和线程池状态（`ru
 ```
 
 参数：
-* corePoolSize：核心线程数，线程池中会始终保持的线程数量，即使线程处于空闲状态，除非设置了 `allowCoreThreadTimeOut` 参数。
-* maximumPoolSize：最大线程数，线程池中能保持的最多线程数量。
-* keepAliveTime：当线程数大于 `corePoolSize` 时，超出的空闲线程能等待新任务的最长时间。
-* unti：`keepAliveTime` 的时间单位。
-* workQueue：用于存放任务的队列，这个队列仅能存放由 `execute` 方法提交的 `Runnable` 。 
-* threadFactory：`executor` 创建线程时所用的工厂。
-* handler：当线程池中线程数量到达 `maximumPoolSize`、`workQueue` 队列已满时，所采取的策略。
+* `corePoolSize`：核心线程数，线程池中会始终保持的线程数量，即使线程处于空闲状态，除非设置了 `allowCoreThreadTimeOut` 参数。
+* `maximumPoolSize`：最大线程数，线程池中能保持的最多线程数量。
+* `keepAliveTime`：当线程数大于 `corePoolSize` 时，超出的空闲线程能等待新任务的最长时间。
+* `unit`：`keepAliveTime` 的时间单位。
+* `workQueue`：用于存放任务的队列，这个队列仅能存放由 `execute` 方法提交的 `Runnable` 。 
+* `threadFactory`：`executor` 创建线程时所用的工厂。
+* `handler`：当线程池中线程数量到达 `maximumPoolSize`、`workQueue` 队列已满时，所采取的策略。
 
 异常：
-* IllegalArgumentException：当下列情况发生时会抛出：
+* `IllegalArgumentException`：当下列情况发生时会抛出：
 	- corePoolSize < 0
 	- keepAliveTime < 0
 	- maximumPoolSize <= 0
 	- maximumPoolSize < corePoolSize
-* NullPointerException：`workQueue` 为 `null`。
+* `NullPointerException`：`workQueue` 为 `null`。
