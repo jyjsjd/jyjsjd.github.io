@@ -7,7 +7,7 @@ email: jyjsjd@hotmail.com
 description: Redis 分片
 ---
 
-原文来自[Partitioning: how to split data among multiple Redis instances.](https://redis.io/topics/partitioning
+原文来自[Partitioning: how to split data among multiple Redis instances.](https://redis.io/topics/partitioning)
 
 ---
 
