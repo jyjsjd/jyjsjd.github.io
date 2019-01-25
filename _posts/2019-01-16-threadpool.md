@@ -185,10 +185,10 @@ ThreadPoolExecutor 线程池的大小（`workerCount`）和线程池状态（`ru
 * `threadFactory`：`executor` 创建线程时所用的工厂。
 * `handler`：当线程池中线程数量到达 `maximumPoolSize`、`workQueue` 队列已满时，所采取的策略。
 > `ThreadPoolExecutor` 内部定义了3个拒绝策略内部类：
-> AbortPolicy：默认策略，拒绝执行并抛出异常。
-> CallerRunsPolicy：线程池没有关闭会直接启动任务的线程执行。
-> DiscardOldestPolicy：线程池没有关闭会从队列头拿任务尝试让线程池执行（如果仍然不能执行，再次执行拒绝策略的时候这个任务就被抛弃了）。
-> DiscardPolicy：忽略任务，什么也不做。
+> * AbortPolicy：默认策略，拒绝执行并抛出异常。
+> * CallerRunsPolicy：线程池没有关闭会直接启动任务的线程执行。
+> * DiscardOldestPolicy：线程池没有关闭会从队列头拿任务尝试让线程池执行（如果仍然不能执行，再次执行拒绝策略的时候这个任务就被抛弃了）。
+> * DiscardPolicy：忽略任务，什么也不做。
 
 异常：
 * `IllegalArgumentException`：当下列情况发生时会抛出：
