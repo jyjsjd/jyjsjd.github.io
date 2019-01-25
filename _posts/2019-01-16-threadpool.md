@@ -74,6 +74,14 @@ description: ThreadPoolExecutor 注释翻译
 * `workerCount`：代表正在工作的线程数
 * `runState`：代表线程池状态的一种
 
+> ctl 是 `workerCount` 和 `runState` 按位或之后的结果，保留了所有为 `1` 的位。
+> ```java
+> private static int ctlOf(int rs, int wc) { 
+> 	return rs | wc; 
+> }
+> ```
+```
+
 为了能把上述两个概念包装起来，`workerCount` 被限定在 `(2^29)-1` 个（大约5亿）线程而不是 `(2^31)-1` 个（20亿）。如果在将来产生了什么问题的话，可以把`ctl`的类型转换为 `AtomicLong` ，相应的调整它的转换、包装。但目前为止，使用 `int` 会更快、更简单。
 
 `workerCount` 是被允许启动而没被允许停止的 `worker` 的数量。这个数值在瞬时可能会和真实的存活线程数不一致，比如 `ThreadFactory` 创建线程失败了，或者线程在结束之前仍然在保存现场。用户可见的线程池大小就是现有的 `worker` 的数量。
@@ -94,7 +102,7 @@ description: ThreadPoolExecutor 注释翻译
 
 ## 状态值
 
-```java
+​```java
 	// 29
 	private static final int COUNT_BITS = Integer.SIZE - 3;
 	// 536870911
