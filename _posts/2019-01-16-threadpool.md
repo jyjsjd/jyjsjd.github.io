@@ -74,17 +74,18 @@ description: ThreadPoolExecutor 注释翻译
 * `workerCount`：代表正在工作的线程数
 * `runState`：代表线程池状态的一种
 
-> ctl 是 `workerCount` 和 `runState` 按位或之后的结果，保留了所有为 `1` 的位。
+> ctl 是 `workerCount` 和 `runState` 按位或之后的结果，保留了所有为 `1` 的位。后面要得到 `workerCount` 和 `runState` 其中一个值，只需设置参数 `rs` 或 `wc` 为 `0` 即可。
 > ```java
 > private static int ctlOf(int rs, int wc) { 
 > 	return rs | wc; 
 > }
 > ```
-```
 
 为了能把上述两个概念包装起来，`workerCount` 被限定在 `(2^29)-1` 个（大约5亿）线程而不是 `(2^31)-1` 个（20亿）。如果在将来产生了什么问题的话，可以把`ctl`的类型转换为 `AtomicLong` ，相应的调整它的转换、包装。但目前为止，使用 `int` 会更快、更简单。
 
-`workerCount` 是被允许启动而没被允许停止的 `worker` 的数量。这个数值在瞬时可能会和真实的存活线程数不一致，比如 `ThreadFactory` 创建线程失败了，或者线程在结束之前仍然在保存现场。用户可见的线程池大小就是现有的 `worker` 的数量。
+`workerCount` 是启动（不是停止）状态的 `worker` 的数量。这个数值在瞬时可能会和真实的存活线程数不一致，比如 `ThreadFactory` 创建线程失败了，或者线程在结束之前仍在保存现场。<u>用户可见的线程池大小就是现有的 `worker` 的数量。<u>
+
+> 核心线程数和最大线程数都是 `worker`。
 
 `runState` 提供了线程池主要的生命周期控制，它的值可能是：
 * `RUNNING`：接受新任务并且处理队列中的任务。
@@ -102,7 +103,7 @@ description: ThreadPoolExecutor 注释翻译
 
 ## 状态值
 
-​```java
+```java
 	// 29
 	private static final int COUNT_BITS = Integer.SIZE - 3;
 	// 536870911
@@ -183,6 +184,11 @@ ThreadPoolExecutor 线程池的大小（`workerCount`）和线程池状态（`ru
 * `workQueue`：用于存放任务的队列，这个队列仅能存放由 `execute` 方法提交的 `Runnable` 。 
 * `threadFactory`：`executor` 创建线程时所用的工厂。
 * `handler`：当线程池中线程数量到达 `maximumPoolSize`、`workQueue` 队列已满时，所采取的策略。
+> `ThreadPoolExecutor` 内部定义了3个拒绝策略内部类：
+> AbortPolicy：默认策略，拒绝执行并抛出异常。
+> CallerRunsPolicy：线程池没有关闭会直接启动任务的线程执行。
+> DiscardOldestPolicy：线程池没有关闭会从队列头拿任务尝试让线程池执行（如果仍然不能执行，再次执行拒绝策略的时候这个任务就被抛弃了）。
+> DiscardPolicy：忽略任务，什么也不做。
 
 异常：
 * `IllegalArgumentException`：当下列情况发生时会抛出：
