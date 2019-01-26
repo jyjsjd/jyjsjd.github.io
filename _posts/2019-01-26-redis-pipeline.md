@@ -31,7 +31,7 @@ Redis 是使用 `C/S` 模式的服务器，并使用名为 `Request/Response` �
 - *Client:* INCR X
 - *Server:* 4
 
-客户端和服务器端通过网络连接，这个连接可能很快（回环接口）也可能很慢（通过互联网连接，两台机器间有多跳）。无论网络延迟如何，客户端发送请求到服务器端、服务器端发送响应到客户端，都要花费一定时间。
+客户端和服务器端通过网络连接，这个连接可能很快（回环接口 loopback interface）也可能很慢（通过互联网连接，两台机器间有多跳）。无论网络延迟如何，客户端发送请求到服务器端、服务器端发送响应到客户端，都要花费一定时间。
 
 这段时间称之为 RTT （Round Trip Time 往返时间）。当客户端需要连续执行一批请求的时候很容易看出它对于性能的影响（如往 list 添加一批元素，或往数据库添加很多 key）。如 RTT 是 250 毫秒（可能是通过互联网的连接），就算服务器能每秒处理 100K 的请求，在这种情况下一秒也只能处理 4 个。
 
@@ -79,7 +79,7 @@ $ (printf "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379
 
 ## 真实的例子
 
-下面将看到一个支持管道的 Ruby Redis 客户端测试管道带来的效率提升：
+下面将看到一个支持管道的 Redis Ruby 客户端测试管道带来的速度提升：
 
 ```ruby
 require 'rubygems'
@@ -115,10 +115,17 @@ bench("with pipelining") {
 }
 ```
 
-在 Mac OS X 系统运行上述脚本：
+在 Mac OS X 系统上，通过回环接口运行上述脚本，会得到数据如下：
 
 ```
 without pipelining 1.185238 seconds
 with pipelining 0.250783 seconds
 ```
 
+可以看到使用管道仅使用了五分之一的时间。
+
+## 管道 VS 脚本
+
+如果使用 Redis 脚本（Redis Scripting）， 可以发现很多使用管道的用例（需要在服务器端做很多工作的）在使用脚本之后，效率更高了。脚本的一大优点是它可以让读写数据的延迟最小，*读*、*写*、*计算*都会非常快（管道在这种场景下没有帮助，因为客户端需要在做写操作之前得到读操作的响应）。
+
+有时应用可能要在管道中发送 [EVAL](https://redis.io/commands/eval) 或 [EVALSHA](https://redis.io/commands/evalsha) 命令。这完全是可能的，而且 Redis 的 [SCRIPT LOAD](http://redis.io/commands/script-load) 命令显示地支持它（它保证 EVALSHA 命令能被没有失败风险地调用）。
