@@ -1,5 +1,5 @@
 ---
-title: Redis 分片
+title: 分片：如何把数据分布到多个 Redis 实例
 category: ['Redis']
 tags: ['Redis']
 author: 景阳
