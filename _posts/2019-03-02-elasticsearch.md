@@ -52,15 +52,17 @@ segment 是不可变的，索引删除的时候不能把文档从 segment 删除
 
 ## 查询
 
+查询的时候操作系统会将磁盘文件里的数据自动缓存到 `filesystem cache`。Elasticsearch 严重依赖于底层的 `filesystem cache`，如果给 `filesystem cache` 很大，可以容纳所有的 `index`、`segment` 等文件，那么搜索的时候就基本都是走内存的，性能会非常高；反之，搜索速度并不会很快。
+
 ![read.png](/assets/img/elasticsearch/read.png)
 
 ## segment 合并
 
-buffer 每 refresh 一次，就会产生一个 segment（默认情况下是 1 秒钟产生一个 segment），这样 segment 会越来越多，此时会定期执行 **merge**。
+buffer 每 refresh 一次，就会产生一个 segment（默认情况下是 1 秒钟产生一个 segment），这样 `segment` 会越来越多，此时会定期执行 **merge**。
 
 - 将多个 `segment` 合并成一个，并将新的 `segment` 写入磁盘；
 - 新增一个 `commit point`，标识所有新的 `segment`；
-- 新的 segment 被打开供搜索使用；
+- 新的 `segment` 被打开供搜索使用；
 - 删除旧的 `segment`。
 
 ![merge.png](/assets/img/elasticsearch/merge.png)
