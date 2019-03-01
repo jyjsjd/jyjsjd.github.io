@@ -15,8 +15,8 @@ description: Elasticsearch
 - shard：index 由 shard 组成，一个 primary shard，其他是 replica shard。
 - segment：shard 包含 segment，segment 中是倒排索引，它是不可变的；segment 内的文档数量的上限是 `2^31`。
 - 倒排索引：倒排索引是 Lucene 中用于使数据可搜索的数据结构。
-- translog：为防止 ES 宕机造成数据丢失，ES 每次写入数据时会同步写到 translog。
-- commit point：列出了所有已知 segment 的文件。
+- translog：为防止 Elasticsearch 宕机造成数据丢失，每次写入数据时会同步写到 translog。
+- commit point：列出所有已知 segment 的文件。
 
 ```
 index => shard => segment => 倒排索引
@@ -35,7 +35,7 @@ index => shard => segment => 倒排索引
 - 当 `translog` 达到一定长度的时候，就会触发 **flush** 操作。
   * 第一步将 `buffer` 中现有数据 `refresh` 到 `os cache` 中去，清空 `buffer`；
   * 然后，将一个 `commit point` 写入磁盘文件，同时强行将 `os cache` 中目前所有的数据都 **fsync** 到磁盘文件中去；
-  * 最后清空现有 translog 日志文件，重建一个 translog。
+  * 最后清空现有 `translog` 日志文件并重建一个。
   
   ![flush.png](/assets/img/elasticsearch/flush.png)
 
@@ -48,7 +48,7 @@ index => shard => segment => 倒排索引
 由于 `segment` 是不可变的，索引删除的时候既不能把文档从 `segment` 删除，也不能修改 `segment` 反映文档的更新。
 
 - 删除操作，会生成一个 `.del` 文件，`commit point` 会包含这个 `.del` 文件。`.del` 文件将文档标识为 `deleted` 状态，在结果返回前从结果集中删除。
-- 更新操作，会将原来的文档标识为 `deleted` 状态，然后新写入一条数据。两个文档有可能都被索引到，但是被标记为删除的文档会被从结果集删除。
+- 更新操作，会将原来的文档标识为 `deleted` 状态，然后新写入一条数据。查询时两个文档有可能都被索引到，但是被标记为删除的文档会被从结果集删除。
 
 ## 查询
 
