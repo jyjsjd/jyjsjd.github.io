@@ -45,7 +45,7 @@ index => shard => segment => 倒排索引
 
 ## 删除和更新
 
-segment 是不可变的，索引删除的时候不能把文档从 segment 删除，也不能修改 segment 反应文档的更新。
+`segment` 是不可变的，索引删除的时候不能把文档从 segment 删除，也不能修改 segment 反应文档的更新。
 
 - 删除操作，会生成一个 `.del` 文件，`commit point` 会包含这个 `.del` 文件。`.del` 文件将文档标识为 `deleted` 状态，在结果返回前从结果集中删除。
 - 更新操作，就是将原来的文档标识为 `deleted` 状态，然后新写入一条数据，两个文档有可能都被索引到，但是被标记为删除的文档会被过滤。
@@ -58,7 +58,7 @@ segment 是不可变的，索引删除的时候不能把文档从 segment 删除
 
 ## segment 合并
 
-buffer 每 refresh 一次，就会产生一个 segment（默认情况下是 1 秒钟产生一个 segment），这样 `segment` 会越来越多，此时会定期执行 **merge**。
+`buffer` 每 `refresh` 一次，就会产生一个 `segment`（默认情况下是 1 秒钟产生一个），这样 `segment` 会越来越多，此时会定期执行 **merge**。
 
 - 将多个 `segment` 合并成一个，并将新的 `segment` 写入磁盘；
 - 新增一个 `commit point`，标识所有新的 `segment`；
