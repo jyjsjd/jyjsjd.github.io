@@ -18,6 +18,10 @@ description: Elasticsearch
 - translog：为防止 Elasticsearch 宕机造成数据丢失，每次写入数据时会同步写到 translog。
 - commit point：列出所有已知 segment 的文件。
 
+```
+index -> shard -> segment -> 倒排索引
+```
+
 ## 写数据
 
 - 先写入内存 `buffer`（**这时数据是搜索不到的**），同时将数据写入 `translog` 日志文件。
