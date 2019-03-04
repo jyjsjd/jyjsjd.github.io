@@ -15,7 +15,7 @@ description: Elasticsearch
 - shard：index 由 shard 组成，一个 primary shard，其他是 replica shard。
 - segment：shard 包含 segment，segment 中是倒排索引，它是**不可变**的；segment 内的文档数量的上限是 `2^31`。
 - 倒排索引：倒排索引是 Lucene 中用于使数据可搜索的数据结构。
-- translog：为防止 Elasticsearch 宕机造成数据丢失，每次写入数据时会同步写到 translog。
+- translog：Lucene 在每次 commit 之后把数据持久化到磁盘，但是 commit 操作代价很大，所以 Elasticsearch 为防止宕机造成数据丢失，每次写入数据时会同步写到 translog，在 flush 操作时把数据持久化。
 - commit point：列出所有已知 segment 的文件。
 
 ```
@@ -32,7 +32,7 @@ index -> shard -> segment -> 倒排索引
   
   ![refresh.png](/assets/img/elasticsearch/refresh.png)
 
-- 当 `translog` 达到一定长度的时候，就会触发 **flush** 操作。
+- 当 `translog` 达到一定长度的时候，就会触发 **flush** 操作（flush 完成了 Lucene 的 commit 操作）：
   * 第一步将 `buffer` 中现有数据 `refresh` 到 `os cache` 中去，清空 `buffer`；
   * 然后，将一个 `commit point` 写入磁盘文件，同时强行将 `os cache` 中目前所有的数据都 **fsync** 到磁盘文件中去；
   * 最后清空现有 `translog` 日志文件并重建一个。
@@ -68,6 +68,8 @@ index -> shard -> segment -> 倒排索引
 ![merge.png](/assets/img/elasticsearch/merge.png)
 
 ## 参考
+
+[Translog](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-translog.html)
 
 [Refresh vs flush](https://stackoverflow.com/questions/19963406/refresh-vs-flush)
 
