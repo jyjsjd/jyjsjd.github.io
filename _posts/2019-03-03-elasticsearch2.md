@@ -10,7 +10,7 @@ description: Elasticsearch
 ## 名词
 
 - node：一个运行中的 Elasticsearch 实例称为一个节点。
-- shard：
+- shard：Elasticsearch 的分片就是 Lucene 的 index，Lucene 的 index 包含多个 segment。
 
 ## 节点
 

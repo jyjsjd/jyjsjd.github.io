@@ -13,7 +13,7 @@ description: Elasticsearch
 
 - index：类似数据库，是存储、索引数据的地方。
 - shard：index 由 shard 组成，一个 primary shard，其他是 replica shard。
-- segment：shard 包含 segment，segment 中是倒排索引，它是不可变的；segment 内的文档数量的上限是 `2^31`。
+- segment：shard 包含 segment，segment 中是倒排索引，它是**不可变**的；segment 内的文档数量的上限是 `2^31`。
 - 倒排索引：倒排索引是 Lucene 中用于使数据可搜索的数据结构。
 - translog：为防止 Elasticsearch 宕机造成数据丢失，每次写入数据时会同步写到 translog。
 - commit point：列出所有已知 segment 的文件。
