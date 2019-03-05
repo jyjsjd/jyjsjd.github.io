@@ -28,8 +28,11 @@ index -> shard -> segment -> 倒排索引
   
   ![buffer.png](/assets/img/elasticsearch/buffer.png)
 
-- 如果 `buffer` 快满了或者到一定时间（1秒），将 `buffer` 数据 **refresh** 到 `os cache` 即操作系统缓存。这时数据就**可以被搜索到了**。
-  
+- 如果 `buffer` 快满了或者到一定时间（1秒），将 `buffer` 数据 **refresh** 到 `os cache` 即操作系统缓存。这时数据就**可以被搜索到了**：
+  * buffer 的文档被写入到一个新的 segment 中；
+  * segment 被打开以供搜索；
+  * 内存 buffer 清空。
+
   ![refresh.png](/assets/img/elasticsearch/refresh.png)
 
 - 当 `translog` 达到一定长度的时候，就会触发 **flush** 操作（flush 完成了 Lucene 的 `commit` 操作）：
