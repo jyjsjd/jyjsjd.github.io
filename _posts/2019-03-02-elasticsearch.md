@@ -76,3 +76,5 @@ index -> shard -> segment -> 倒排索引
 [Making Changes Persistent](https://www.elastic.co/guide/en/elasticsearch/guide/master/translog.html)
 
 [ES 工作原理](https://doocs.github.io/advanced-java/#/docs/high-concurrency/es-write-query-search)
+
+[Elasticsearch中数据是如何存储的](https://elasticsearch.cn/article/6178)
