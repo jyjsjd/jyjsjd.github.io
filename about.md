@@ -2,10 +2,10 @@
 title: "About"
 ---
 
-### About Me
+## About Me
 
 Email: anlqc2pkQGhvdG1haWwuY29t
 
-### Buy me a coffee
+## Buy me a coffee
 
-![coffee](/assets/img/coffee.jpg)
+![coffee](/assets/img/coffee.png)
