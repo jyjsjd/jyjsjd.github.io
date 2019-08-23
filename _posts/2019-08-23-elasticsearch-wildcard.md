@@ -38,7 +38,7 @@ email: jyjsjd@hotmail.com
 Elasticsearch搜索时会对*文档*和*搜索词*进行分词，有时这不符合我们的需求，因为分词以后搜出来的结果可能多了或者少了，一些特殊的符号比如标点符号也会搜不到了。
 
 - 禁止文档分词：设置文档的字段类型为`keyword`；
-- 禁止搜索词分词：在字段名后面加上`.keyword`，如上文的`title.keyword`。
+- 禁止搜索词分词：在字段名后面加上`.keyword`，如上文把`title`改为`title.keyword`。
 
 ## 注意
 
