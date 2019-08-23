@@ -46,12 +46,12 @@ Elasticsearch搜索时会对*文档*和*搜索词*进行分词，有时这不符
 
 ## 参考
 
-[https://www.elastic.co/guide/en/elasticsearch/reference/6.1/query-dsl-wildcard-query.html#wildcard-query-field-params](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-wildcard-query.html#wildcard-query-field-params)
+[wildcard-query-field-params](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-wildcard-query.html#wildcard-query-field-params)
 
-[https://www.elastic.co/guide/en/elasticsearch/reference/6.1/keyword.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/keyword.html)
+[keyword](https://www.elastic.co/guide/en/elasticsearch/reference/current/keyword.html)
 
-[https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-keyword-analyzer.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-keyword-analyzer.html)
+[analysis-keyword-analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-keyword-analyzer.html)
 
-https://www.elastic.co/guide/en/elasticsearch/reference/6.1/normalizer.html
+[normalizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/normalizer.html)
 
-https://discuss.elastic.co/t/wild-card-queries-do-not-work-after-normalization/91386
+[wild-card-queries-do-not-work-after-normalization](https://discuss.elastic.co/t/wild-card-queries-do-not-work-after-normalization/91386)
