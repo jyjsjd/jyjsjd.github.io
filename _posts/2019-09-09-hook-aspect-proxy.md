@@ -20,7 +20,7 @@ description: 钩子函数、切面编程和代理
 通常钩子方法会和*模板模式*结合，比如`JdbcTemplate`包装了一些模板代码，但是会开放`PreparedStatementCallback`接口，在特定位置执行自定义行为。
 
 ```java
-    @Override
+  @Override
 	public <T> T execute(PreparedStatementCreator psc, PreparedStatementCallback<T> action)
 			throws DataAccessException {
 		Connection con = DataSourceUtils.getConnection(getDataSource());
@@ -37,13 +37,13 @@ description: 钩子函数、切面编程和代理
 			if (this.nativeJdbcExtractor != null) {
 				psToUse = this.nativeJdbcExtractor.getNativePreparedStatement(ps);
 			}
-            // 调用钩子函数
+      // 调用钩子函数
 			T result = action.doInPreparedStatement(psToUse);
 			handleWarnings(ps);
 			return result;
 		}
 		catch (SQLException ex) {
-            // ...
+      // ...
 			throw getExceptionTranslator().translate("PreparedStatementCallback", sql, ex);
 		}
 		finally {
