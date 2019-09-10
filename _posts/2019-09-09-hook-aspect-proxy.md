@@ -37,6 +37,7 @@ description: 钩子函数、切面编程和代理
 			if (this.nativeJdbcExtractor != null) {
 				psToUse = this.nativeJdbcExtractor.getNativePreparedStatement(ps);
 			}
+      // 调用钩子函数
 			T result = action.doInPreparedStatement(psToUse);
 			handleWarnings(ps);
 			return result;
@@ -107,7 +108,9 @@ public class DynamicProxyTest {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             System.out.println("自定义内容");
-            return method.invoke(originalObj, args);
+            Object result = method.invoke(originalObj, args);
+            System.out.println("自定义内容");
+            return result;
         }
     }
 }
