@@ -17,7 +17,7 @@ description: 钩子函数、切面编程和代理
 
 >是能够影响默认行为或流程的地方。
 
-通常钩子方法会和*模板模式*结合，比如`JdbcTemplate`包装了一些模板代码，但是会开放`PreparedStatementCallback`接口，在特定位置执行自定义行为。
+通常钩子方法会和*模板模式*结合，比如`JdbcTemplate`包装了一些模板代码，但是会开放`PreparedStatementCallback`接口，在特定位置执行用户自定义行为。
 
 ```java
   @Override
