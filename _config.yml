@@ -1,30 +1,40 @@
-title: "我的学习记录"
-author: "Jing Yang"
-description: ""
-more: "更多 »"
-url: "https://jyjsjd.github.io/"
+plugins: [jekyll-paginate]
+
+permalink: /:categories/:title/
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input:  GFM
+  syntax_highlighter: rouge
+
+paginate: 10
+paginate_path: "page/:num"
 baseurl: ""
-paginate: 5
-permalink: pretty
-excerpt_separator: "\n\n\n" # two blank lines
 
-style:
-  minimalist: false
-  dark: false
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      styles : [highlight.css,gitment.css,post.css]
+      scripts : [gitment.js, post.js]
 
-navigation:
-  - index.html
-  - archive.html
-  - about.md
+title: "过来的路"
+email: jyjsjd@gmail.com
+description: ""
+github:
+  username: jyjsjd
+# swiftype:
+#   searchId: iXZyPokVfxFaBTvi64Y6
+# gitment:
+#     repo: blog
+#     client_id: a6fb73b3e790e234bab8
+#     client_secret: cc10aaff53a03d05ab2ee002dbf401dd7627c7a3
 
-comments:
-  disqus: "disqus-contrast"
-#  isso: "comments.mysite.org"
+url: "https://jyjsjd.github.io"
+# imgrepo: "https://bit-ranger.github.io/blog/static/img"
 
-links: # see http://fontawesome.io/icons/#brand for all possible icons
-  - github: "https://github.com/jyjsjd"
-  - envelope: "anlqc2pkQGhvdG1haWwuY29t"
 
-defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-sass: {style: expanded}
-plugins: [jekyll-feed, jekyll-paginate]
