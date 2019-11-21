@@ -8,7 +8,8 @@ description: 元编程
 typora-root-url: ../assets
 ---
 
-[toc]
+* TOC
+{:toc}
 
 # 元编程
 
