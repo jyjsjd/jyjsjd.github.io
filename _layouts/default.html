@@ -4,11 +4,11 @@
 {% include head.html %}
 
 <body>
-    {% include toc.html html=content %}
     {% include header.html %}
 
     <div class="main">
         <div class="container">
+            {% include toc.html html=content %}
             {{ content }}
         </div>
         <div class="page-scrollTop" data-toggle="tooltip" data-placement="top" title="Top">
