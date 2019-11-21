@@ -3,7 +3,7 @@
 title: 2017年的面试
 category: ['面试']
 tags: ['面试']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 2017年的面试
 ---

@@ -3,7 +3,7 @@
 title: Java 位移运算
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Java 位移运算
 ---

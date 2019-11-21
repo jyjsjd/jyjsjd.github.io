@@ -3,7 +3,7 @@
 title: MySQL 分区表
 category: ['MySQL']
 tags: ['MySQL']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 介绍 MySQL 分区表
 ---

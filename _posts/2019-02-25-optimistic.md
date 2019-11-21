@@ -2,7 +2,7 @@
 title: Elasticsearch 乐观锁控制
 category: ['Elasticsearch']
 tags: ['Elasticsearch']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Elasticsearch 乐观锁控制
 ---

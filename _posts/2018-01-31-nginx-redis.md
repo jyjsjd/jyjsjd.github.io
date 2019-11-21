@@ -3,7 +3,7 @@
 title: Nginx 实现访问限速功能
 category: ['Nginx']
 tags: ['Nginx']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Nginx 实现访问限速功能
 ---

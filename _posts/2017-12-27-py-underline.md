@@ -3,7 +3,7 @@
 title: Python 中的下划线
 category: ['Python']
 tags: ['Python']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Python 中的下划线
 ---

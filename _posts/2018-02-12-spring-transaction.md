@@ -3,7 +3,7 @@
 title: Spring事务隔离和事务传播
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Spring事务隔离级别和事务传播
 ---

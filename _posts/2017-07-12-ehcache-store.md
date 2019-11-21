@@ -3,7 +3,7 @@
 title: Ehcache（二）存储层次
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Ehcache 存储层次
 ---

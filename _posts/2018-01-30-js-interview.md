@@ -3,7 +3,7 @@
 title: 一道 JavaScript 面试题
 category: ['JavaScript']
 tags: ['JavaScript']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 一道 JavaScript 面试题
 ---

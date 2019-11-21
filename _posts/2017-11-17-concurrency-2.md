@@ -3,7 +3,7 @@
 title: 多线程的一些概念
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 多线程的一些概念
 ---

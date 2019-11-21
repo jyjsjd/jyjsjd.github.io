@@ -3,7 +3,7 @@
 title: disconf 使用
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: disconf 使用
 ---

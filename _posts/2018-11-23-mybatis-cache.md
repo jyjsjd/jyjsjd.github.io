@@ -2,7 +2,7 @@
 title: MyBatis 缓存
 category: ['MyBatis']
 tags: ['MyBatis']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: MyBatis 缓存
 ---

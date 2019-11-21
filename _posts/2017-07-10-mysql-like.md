@@ -3,7 +3,7 @@
 title: MySQL LIKE 关键字
 category: ['MySQL']
 tags: ['MySQL']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: MySQL LIKE
 ---

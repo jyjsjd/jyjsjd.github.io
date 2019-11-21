@@ -3,7 +3,7 @@
 title: 双亲委派模型
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 双亲委派模型
 ---

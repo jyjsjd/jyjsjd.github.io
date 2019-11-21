@@ -3,7 +3,7 @@
 title: SpringMVC 核心架构
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: SpringMVC 核心架构
 ---

@@ -3,7 +3,7 @@
 title:  Spring MVC 全局错误处理的几种方法
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 错误处理
 ---

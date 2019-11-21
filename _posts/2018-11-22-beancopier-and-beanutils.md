@@ -3,7 +3,7 @@
 title: BeanUtils 和 BeanCopier 性能比较
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: BeanUtils 和 BeanCopier 性能比较
 

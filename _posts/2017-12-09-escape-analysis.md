@@ -3,7 +3,7 @@
 title: 逃逸分析
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 逃逸分析
 ---

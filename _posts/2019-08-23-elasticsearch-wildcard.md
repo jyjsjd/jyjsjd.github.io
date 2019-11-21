@@ -2,7 +2,7 @@
 title: Elasticsearch wildcard搜索
 category: ['Elasticsearch']
 tags: ['Elasticsearch']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 ---
 

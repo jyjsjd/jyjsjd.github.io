@@ -3,7 +3,7 @@
 title: UNION 和 LIMIT 1
 category: ['MySQL']
 tags: ['MySQL']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: UNION 和 LIMIT 1
 ---

@@ -3,7 +3,7 @@
 title: 进程间通信
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 进程间通信
 ---

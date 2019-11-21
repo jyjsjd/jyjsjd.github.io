@@ -3,7 +3,7 @@
 title: JavaScript 变量提升
 category: ['JavaScript']
 tags: ['JavaScript']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: JavaScript 变量提升
 ---

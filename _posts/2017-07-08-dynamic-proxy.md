@@ -3,7 +3,7 @@
 title: Java 动态代理
 category: ['design pattern']
 tags: ['design pattern']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 动态代理
 ---

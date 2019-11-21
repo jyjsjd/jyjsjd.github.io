@@ -3,7 +3,7 @@
 title: Spring MVC 配置文件
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Spring MVC 配置文件
 ---

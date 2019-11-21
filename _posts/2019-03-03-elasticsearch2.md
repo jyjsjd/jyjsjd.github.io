@@ -2,7 +2,7 @@
 title: Elasticsearch 分布式架构
 category: ['Elasticsearch']
 tags: ['Elasticsearch']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Elasticsearch
 ---

@@ -2,7 +2,7 @@
 title: MySQL 索引
 category: ['MySQL']
 tags: ['MySQL']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: MySQL 索引
 ---

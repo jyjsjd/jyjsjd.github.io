@@ -3,7 +3,7 @@
 title: Comparable 和 Comparator
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Comparable 接口
 ---

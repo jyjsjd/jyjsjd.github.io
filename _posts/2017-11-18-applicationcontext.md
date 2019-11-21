@@ -3,7 +3,7 @@
 title: ApplicationContext 继承关系
 category: ['Spring']
 tags: ['Spring']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: ApplicationContext 继承关系
 ---

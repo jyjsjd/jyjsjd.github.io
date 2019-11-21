@@ -2,7 +2,7 @@
 title: ThreadPoolExecutor 注释翻译
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: ThreadPoolExecutor 注释翻译
 ---

@@ -2,7 +2,7 @@
 title: Logstash 同步 MySQL 数据到 Elasticsearch
 category: ['Logstash']
 tags: ['Logstash']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Logstash
 ---

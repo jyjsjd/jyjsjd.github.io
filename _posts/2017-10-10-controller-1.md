@@ -3,7 +3,7 @@
 title: 有关 RequestMapping 注解的一些事（一）
 category: ['Spring']
 tags: ['Spring']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 有关 RequestMapping 注解的一些事
 ---

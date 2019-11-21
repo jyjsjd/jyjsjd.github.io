@@ -2,7 +2,7 @@
 title: 钩子函数、切面编程和代理
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 钩子函数、切面编程和代理
 ---

@@ -3,7 +3,7 @@
 title: Java 多线程要素
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Java 多线程要素
 ---

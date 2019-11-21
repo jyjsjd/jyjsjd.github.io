@@ -3,7 +3,7 @@
 title: Spring 工厂方法与 FactoryBean
 category: ['Spring']
 tags: ['Spring']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Spring 工厂方法与 FactoryBean
 ---

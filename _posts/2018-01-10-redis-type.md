@@ -3,7 +3,7 @@
 title: Redis 数据结构
 category: ['数据库']
 tags: ['数据库']
-author: 景阳
+author: jyjsjd
 email:  jyjsjd@hotmail.com
 description: Redis 数据结构
 ---

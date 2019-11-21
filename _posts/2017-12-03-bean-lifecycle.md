@@ -3,7 +3,7 @@
 title: Spring中Bean的一生
 category: ['Spring']
 tags: ['Spring']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Spring中Bean的一生
 ---

@@ -3,7 +3,7 @@
 title: Ehcache（一）缓存配置
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Ehcache 缓存配置
 ---

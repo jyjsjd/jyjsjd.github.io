@@ -3,7 +3,7 @@
 title: JVM 基本结构
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 介绍JVM 基本结构
 ---

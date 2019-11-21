@@ -2,7 +2,7 @@
 title: 用管道加速 Redis 查询
 category: ['Redis']
 tags: ['Redis']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 用管道加速 Redis 查询
 ---

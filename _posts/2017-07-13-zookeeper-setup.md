@@ -3,7 +3,7 @@
 title: 搭建 zookeeper 集群
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 搭建 zookeeper 集群
 ---

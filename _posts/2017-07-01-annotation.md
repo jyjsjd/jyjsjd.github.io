@@ -3,7 +3,7 @@
 title: Java 注解笔记
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: Java 注解笔记
 ---

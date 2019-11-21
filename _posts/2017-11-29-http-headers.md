@@ -3,7 +3,7 @@
 title: 漏洞扫描报告的缺失响应头
 category: ['Http']
 tags: ['Http']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 漏洞扫描报告的缺失响应头
 ---

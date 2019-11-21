@@ -2,7 +2,7 @@
 title: Java元编程和热更新技术总结
 category: ['Java']
 tags: ['Java']
-author: 景阳
+author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 元编程
 typora-root-url: ../assets
