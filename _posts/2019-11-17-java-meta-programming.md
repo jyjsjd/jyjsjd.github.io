@@ -29,7 +29,7 @@ Java的反射功能主要在`java.lang.refelet`包，`Class`在`java.lang`包。
 
 ### 动态代理
 
-在`java.lang.refelet`包。动态代理让代码在运行时选择一个合适的实现来完成任务。
+在`java.lang.refelet`包。动态代理让代码在运行时选择一个合适的实现来完成任务。[参见]([https://jyjsjd.github.io/java/hook-aspect-proxy/#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86](https://jyjsjd.github.io/java/hook-aspect-proxy/#动态代理))。
 
 ### MethodHandle
 
