@@ -20,7 +20,7 @@ defaults:
     values:
       layout: post
       styles : [highlight.css,gitment.css,post.css]
-      scripts : [gitment.js, post.js]
+      scripts : [post.js, toc.js]
 
 title: "过来的路"
 email: jyjsjd@gmail.com
