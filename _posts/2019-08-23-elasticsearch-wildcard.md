@@ -6,6 +6,9 @@ author: 景阳
 email: jyjsjd@hotmail.com
 ---
 
+* TOC
+{:toc}
+
 本文针对Elasticsearch 6.1版本。
 
 ## Wildcard 搜索

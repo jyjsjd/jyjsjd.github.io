@@ -7,6 +7,9 @@ email: jyjsjd@hotmail.com
 description: 用管道加速 Redis 查询
 ---
 
+* TOC
+{:toc}
+
 原文来自[Using pipelining to speedup Redis queries](https://redis.io/topics/pipelining#using-pipelining-to-speedup-redis-queries)
 
 ---

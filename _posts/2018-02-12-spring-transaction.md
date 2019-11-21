@@ -8,6 +8,9 @@ email: jyjsjd@hotmail.com
 description: Spring事务隔离级别和事务传播
 ---
 
+* TOC
+{:toc}
+
 #### 1. TransactionDefinition接口
 TransactionDefinition接口定义了 Spring 中与事务有关的属性和方法：
 

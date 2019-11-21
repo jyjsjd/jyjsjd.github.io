@@ -7,6 +7,9 @@ email: jyjsjd@hotmail.com
 description: Elasticsearch
 ---
 
+* TOC
+{:toc}
+
 ## 名词
 
 这些名词下面会用到，提前过一下。
