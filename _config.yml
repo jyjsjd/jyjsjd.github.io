@@ -20,7 +20,7 @@ defaults:
     values:
       layout: post
       styles : [highlight.css,gitment.css,post.css]
-      scripts : [gitment.js, post.js, toc.js]
+      scripts : [gitment.js, post.js]
 
 title: "jyjsjd-blog"
 email: jyjsjd@gmail.com
