@@ -3,17 +3,52 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="{{ page.title }}, {% for category in page.categories %}{{ category }},{% endfor %} {% for tag in page.tags %}{{ tag }},{% endfor %} {{ site.title }}" />
-    <meta name="description" content="{{ page.title }}, {% for category in page.categories %}{{ category }},{% endfor %} {% for tag in page.tags %}{{ tag }},{% endfor %} {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-    <meta name="theme-color" content="#2CA6CB"/>
-    <link rel="shortcut icon" type="image/x-icon" media="screen" href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url}}" />
+    <meta name="keywords"
+        content="{{ page.title }}, {% for category in page.categories %}{{ category }},{% endfor %} {% for tag in page.tags %}{{ tag }},{% endfor %} {{ site.title }}" />
+    <meta name="description"
+        content="{{ page.title }}, {% for category in page.categories %}{{ category }},{% endfor %} {% for tag in page.tags %}{{ tag }},{% endfor %} {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="theme-color" content="#2CA6CB" />
+    <link rel="shortcut icon" type="image/x-icon" media="screen"
+        href="{{ '/favicon.ico' | prepend: site.baseurl | prepend: site.url}}" />
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}"  />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}"
+        href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" />
 
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/octicons/3.5.0/octicons.min.css" >
-    <link rel="stylesheet" type="text/css" href="{{ '/static/css/style.css' | prepend: site.baseurl | prepend: site.url}}" />
-    {% for style in page.styles %}<link rel="stylesheet" type="text/css" href="{{ '/static/css/' | append: style | prepend: site.baseurl | prepend: site.url}}" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/octicons/3.5.0/octicons.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ '/static/css/style.css' | prepend: site.baseurl | prepend: site.url}}" />
+    {% for style in page.styles %}
+    <link rel="stylesheet" type="text/css"
+        href="{{ '/static/css/' | append: style | prepend: site.baseurl | prepend: site.url}}" />
     {%endfor%}
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.0/mermaid.min.js"></script>
+    <script>
+        var config = {
+            startOnLoad: true,
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true
+            }
+        };
+        mermaid.initialize(config);
+        $(function () {
+            var elements = document.getElementsByClassName("language-mermaid");
+            for (var i = elements.length; i--;) {
+                element = elements[i];
+                var graphDefinition = element.innerText;
+                if (graphDefinition) {
+                    var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function (svg) {});
+                    if (svg) {
+                        var svgElement = document.createElement('div');
+                        preNode = element.parentNode;
+                        svgElement.innerHTML = svg;
+                        svgElement.setAttribute('class', 'mermaid');
+                        svgElement.setAttribute('data-processed', 'true');
+                        preNode.parentNode.replaceChild(svgElement, preNode);
+                    }
+                }
+            }
+        });
+    </script>
 </head>
