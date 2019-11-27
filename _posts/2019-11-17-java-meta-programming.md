@@ -73,7 +73,7 @@ MethodHandle是对底层可执行方法的引用，有了MethodType就可以获�
 
 触发方法时可以调用以下几个方法：
 
-- invoke
+- invoke：会尝试在调用的时候进行返回值和参数类型的转换。
 - invokeExact：和invoke不同在于类型必须要完全一致，参数列表和返回类型不可以有转型。
 - invokeWithArguments
 
@@ -88,6 +88,8 @@ MethodHandle是对底层可执行方法的引用，有了MethodType就可以获�
 - findStatic：invokestatic
 - findVirtual：invokevirtual&invokeinterface
 - findSpecial：invokespecial
+
+![lookup](/assets/img/lookup.png)
 
 ### 函数式接口
 
