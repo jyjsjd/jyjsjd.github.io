@@ -39,21 +39,51 @@ Java的反射功能主要在`java.lang.refelet`包，`Class`在`java.lang`包。
 
 能够以描述符的方式解构按照Java Bean规范写的POJO。很多地方类似于反射，但仅限于Bean。
 
-### MethodHandle
+### Method Handle
 
-实现在`java.lang.invoke`包。
-
-是Java对*动态语言*的支持。JVM层面是*invokedynamic*命令。
+实现在`java.lang.invoke`包。在JVM层面的支持是*invokevirtual*命令；常量池增加了3中类型：*CONSTANT_MethodHandle_info*，*CONSTANT_MethodType_info*和*CONSTANT_InvokeDynamic_info*。MethodHandle使用的是*signature polymorphism*而不是*type descriptor*。
 
 #### MethodType
 
+构造MethodType时要提供要调用方法的参数列表和返回类型，以供MethodHandle使用。通常MethodType是由静态方法构造，它的两个私有构造方法要求提供返回参数和参数列表。
+
+> A MethodType represents the arguments and return type accepted and returned by a method handle or passed and expected by a method handle caller.
+
+```java
+public final class MethodType implements java.io.Serializable {
+    private MethodType(Class<?> rtype, Class<?>[] ptypes, boolean trusted) {
+        checkRtype(rtype);
+        checkPtypes(ptypes);
+        this.rtype = rtype;
+        this.ptypes = trusted ? ptypes : Arrays.copyOf(ptypes, ptypes.length);
+    }
+
+    private MethodType(Class<?>[] ptypes, Class<?> rtype) {
+        this.rtype = rtype;
+        this.ptypes = ptypes;
+    }
+}
+```
+
 #### MethodHandle
 
-方法链接使用的是*signature polymorphism*而不是*type descriptor*。
+MethodHandle是对底层可执行方法的引用，有了MethodType就可以获取MethodHandle。
 
-调用方法在JVM层面的支持是*invokevirtual*命令；常量池增加了3中类型：*CONSTANT_MethodHandle_info*，*CONSTANT_MethodType_info*和*CONSTANT_InvokeDynamic_info*。
+> Method handles are dynamically and strongly typed according to their parameter and return types. They are not distinguished by the name or the defining class of their underlying methods.
+
+触发方法时可以调用以下几个方法：
+
+- invoke
+- invokeExact：和invoke不同在于类型必须要完全一致，参数列表和返回类型不可以有转型。
+- invokeWithArguments
+
+也可以绑定到具体对象上去执行：
+
+- bindTo
 
 #### MethodHandles.Lookup
+
+工具类，以下方法可以获得MethodHandle：
 
 - findStatic：invokestatic
 - findVirtual：invokevirtual&invokeinterface
