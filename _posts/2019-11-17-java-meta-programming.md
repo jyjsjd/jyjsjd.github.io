@@ -29,15 +29,23 @@ Java的反射功能主要在`java.lang.refelet`包，`Class`在`java.lang`包。
 
 ![Class](/assets/img/Class.png)
 
+---
+
 ### 动态代理
 
-实现在`java.lang.refelet`包。动态代理让代码在运行时选择一个合适的实现来完成任务。[参见]([https://jyjsjd.github.io/java/hook-aspect-proxy/#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86](https://jyjsjd.github.io/java/hook-aspect-proxy/#动态代理))。
+实现在`java.lang.refelet`包。动态代理让代码在运行时选择一个合适的实现来完成任务。
+
+[参见]([https://jyjsjd.github.io/java/hook-aspect-proxy/#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86](https://jyjsjd.github.io/java/hook-aspect-proxy/#动态代理))。
+
+---
 
 ### Bean描述符
 
 实现在`java.lang.beans`包。
 
 能够以描述符的方式解构按照Java Bean规范写的POJO。很多地方类似于反射，但仅限于Bean。
+
+---
 
 ### Method Handle
 
@@ -83,13 +91,15 @@ MethodHandle是对底层可执行方法的引用，有了MethodType就可以获�
 
 #### MethodHandles.Lookup
 
-工具类，以下方法可以获得MethodHandle：
+工具类，以下方法可以获得MethodHandle，各自对应了JVM命令：
 
 - findStatic：invokestatic
 - findVirtual：invokevirtual&invokeinterface
 - findSpecial：invokespecial
 
 ![lookup](/assets/img/lookup.png)
+
+---
 
 ### 函数式接口
 
@@ -145,9 +155,9 @@ public abstract class AbstractProcessor implements Processor {
 
 ## 加载时
 
-### Instrumentation
-
 ### 修改字节码
+
+---
 
 ### SPI
 
@@ -155,9 +165,25 @@ public abstract class AbstractProcessor implements Processor {
 
 # 热更新
 
+## Instrumentation
+
+实现在`java.lang.instrument`。
+
+> Provides services that allow Java programming language agents to instrument programs running on the JVM.
+
+Instrumentation的具体实现依赖于`JVMTI`。
+
+JVMTI：Java Virtual Machine Tool Interface是一套由 Java 虚拟机提供的，为 JVM 相关的工具提供的本地编程接口集合。
+
+---
+
 ## JMX
 
+---
+
 ## Agent
+
+---
 
 ## Attach
 
@@ -176,3 +202,5 @@ public abstract class AbstractProcessor implements Processor {
 [Package java.lang.invoke](https://docs.oracle.com/javase/7/docs/api/java/lang/invoke/package-summary.html)
 
 [Annotation Processing101](http://hannesdorfmann.com/annotation-processing/annotationprocessing101)
+
+[Instrumentation 新功能](https://www.ibm.com/developerworks/cn/java/j-lo-jse61/index.html)
