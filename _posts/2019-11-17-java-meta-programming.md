@@ -5,7 +5,6 @@ tags: ['Java']
 author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 元编程
-
 ---
 
 * TOC
@@ -155,17 +154,7 @@ public abstract class AbstractProcessor implements Processor {
 
 ## 加载时
 
-### 修改字节码
-
----
-
-### SPI
-
----
-
-# 热更新
-
-## Instrumentation
+### Instrumentation
 
 实现在`java.lang.instrument`。
 
@@ -177,7 +166,7 @@ Instrumentation的具体实现依赖于`JVMTI`。Java Virtual Machine Tool Inter
 -javaagent:jarpath[=options]
 ```
 
-JAR文件中的`manifest`必须要包含实现了`premain`方法的类；或者也可以包含`agentmain`方法。比如：
+JAR文件中的`manifest`必须要包含实现了`premain`方法的类；或者是包含`agentmain`方法的类。比如：
 
 ```
 Manifest-Version: 1.0 
@@ -191,7 +180,7 @@ Manifest-Version: 1.0
 Agentmain-Class: Agentmain
 ```
 
-### premain
+#### premain
 
 在JVM启动之后，premain会在main方法之前被调用，JVM会按照以下顺序查找：
 
@@ -202,7 +191,7 @@ public static void premain(String agentArgs);
 
 如果有第一个premain方法就不会尝试调用第二个方法。
 
-### agentmain
+#### agentmain
 
 agentmain方法可以在main方法执行之后运行，同样JVM会按照以下顺序查找：
 
@@ -212,6 +201,66 @@ public static void agentmain (String agentArgs);
 ```
 
 ---
+
+### 修改字节码
+
+---
+
+### SPI
+
+实现在`java.util.ServiceLoader`。
+
+**面向接口编程**的一个典型案例，分为接口`service`和接口的实现`service provider`。使用者可以根据不同的需要使用`service provider`，只要它实现了`service`即可，通过在`META-INF/services`目录中写入用实现类的全限定名命名的**文件**，告诉程序具体的实现类，通过`ServiceLoader`去加载：
+
+```
+com.xxx.service.ServiceProvider
+```
+
+在`ServiceLoader`中可见调用`load`方法寻找实现类时，它直接去`META-INF/services`目录：
+
+```java
+public final class ServiceLoader<S> implements Iterable<S> {
+    private static final String PREFIX = "META-INF/services/";
+}
+```
+
+在Java中比较常见的应用是SQL的`DriverManager`中加载数据库驱动的代码，可以看到它是通过`ServiceLoader`去找数据库的驱动程序：
+
+```java
+public class DriverManager {
+		// ...
+    static {
+        loadInitialDrivers();
+        println("JDBC DriverManager initialized");
+    }
+    // ...
+  	private static void loadInitialDrivers() {
+        // ...
+        AccessController.doPrivileged(new PrivilegedAction<Void>() {
+            public Void run() {
+                ServiceLoader<Driver> loadedDrivers = ServiceLoader.load(Driver.class);
+                Iterator<Driver> driversIterator = loadedDrivers.iterator();
+
+                try{
+                    while(driversIterator.hasNext()) {
+                        driversIterator.next();
+                    }
+                } catch(Throwable t) {
+                }
+                return null;
+            }
+        });
+    // ...
+}
+```
+
+
+
+Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configured Beans](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-understanding-auto-configured-beans)。
+
+---
+
+# 热更新
 
 ## JMX
 
@@ -233,12 +282,16 @@ public static void agentmain (String agentArgs);
 
 ---
 
-# 参考
+# 参考文献
 
 [深入理解Java虚拟机]()
 
 [Package java.lang.invoke](https://docs.oracle.com/javase/7/docs/api/java/lang/invoke/package-summary.html)
 
+[Package java.lang.instrument](https://docs.oracle.com/javase/7/docs/api/java/lang/instrument/package-summary.html)
+
 [Annotation Processing101](http://hannesdorfmann.com/annotation-processing/annotationprocessing101)
 
 [Instrumentation 新功能](https://www.ibm.com/developerworks/cn/java/j-lo-jse61/index.html)
+
+[Understanding Auto-configured Beans](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-understanding-auto-configured-beans)
