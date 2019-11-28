@@ -171,9 +171,45 @@ public abstract class AbstractProcessor implements Processor {
 
 > Provides services that allow Java programming language agents to instrument programs running on the JVM.
 
-Instrumentation的具体实现依赖于`JVMTI`。
+Instrumentation的具体实现依赖于`JVMTI`。Java Virtual Machine Tool Interface（JVMTI）是一套由 Java 虚拟机提供的，为 JVM 相关的工具提供的本地编程接口集合。可以在命令行启动时加入以下参数：
 
-JVMTI：Java Virtual Machine Tool Interface是一套由 Java 虚拟机提供的，为 JVM 相关的工具提供的本地编程接口集合。
+```shell
+-javaagent:jarpath[=options]
+```
+
+JAR文件中的`manifest`必须要包含实现了`premain`方法的类；或者也可以包含`agentmain`方法。比如：
+
+```
+Manifest-Version: 1.0 
+Premain-Class: Premain
+```
+
+或者：
+
+```
+Manifest-Version: 1.0 
+Agentmain-Class: Agentmain
+```
+
+### premain
+
+在JVM启动之后，premain会在main方法之前被调用，JVM会按照以下顺序查找：
+
+```java
+public static void premain(String agentArgs, Instrumentation inst);
+public static void premain(String agentArgs);
+```
+
+如果有第一个premain方法就不会尝试调用第二个方法。
+
+### agentmain
+
+agentmain方法可以在main方法执行之后运行，同样JVM会按照以下顺序查找：
+
+```java
+public static void agentmain (String agentArgs, Instrumentation inst);
+public static void agentmain (String agentArgs); 
+```
 
 ---
 
@@ -194,6 +230,8 @@ JVMTI：Java Virtual Machine Tool Interface是一套由 Java 虚拟机提供的�
 > 为什么元编程和热更新要放在一起总结？
 
 我个人认为这两件事对于Java来说都属于“魔法”了，赋予了Java一些动态语言的特性，在日常的编码中很少会使用到这些技术。
+
+---
 
 # 参考
 
