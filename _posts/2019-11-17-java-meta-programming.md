@@ -204,6 +204,10 @@ public static void agentmain (String agentArgs);
 
 ### 修改字节码
 
+比较常用的就是Spring的AOP了。
+
+![DefaultAdvisorAutoProxyCreator](/assets/img/DefaultAdvisorAutoProxyCreator.png)
+
 ---
 
 ### SPI
@@ -228,13 +232,14 @@ public final class ServiceLoader<S> implements Iterable<S> {
 
 ```java
 public class DriverManager {
-		// ...
+    // ...
     static {
         loadInitialDrivers();
         println("JDBC DriverManager initialized");
     }
+
     // ...
-  	private static void loadInitialDrivers() {
+    private static void loadInitialDrivers() {
         // ...
         AccessController.doPrivileged(new PrivilegedAction<Void>() {
             public Void run() {
@@ -295,3 +300,5 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 [Instrumentation 新功能](https://www.ibm.com/developerworks/cn/java/j-lo-jse61/index.html)
 
 [Understanding Auto-configured Beans](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-understanding-auto-configured-beans)
+
+[Java SPI思想梳理](https://zhuanlan.zhihu.com/p/28909673)
