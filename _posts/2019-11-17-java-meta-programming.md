@@ -208,6 +208,15 @@ public static void agentmain (String agentArgs);
 
 ![AnnotationAwareAspectJAutoProxyCreator](/assets/img/AnnotationAwareAspectJAutoProxyCreator.png)
 
+从上图可见，注解方式依赖的`AnnotationAwareAspectJAutoProxyCreator`是继承自`BeanPostProcessor`，AOP最终就是在`postProcessAfterInitialization`方法中实现的。
+
+Spring实现AOP使用两种策略：
+
+- JDK的动态代理；
+- CGLIB。
+
+分别对应`JdkDynamicAopProxy`和`ObjenesisCglibAopProxy`。
+
 ---
 
 ### SPI
