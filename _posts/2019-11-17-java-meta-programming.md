@@ -206,7 +206,7 @@ public static void agentmain (String agentArgs);
 
 比较常用的就是Spring的AOP了。
 
-![DefaultAdvisorAutoProxyCreator](/assets/img/DefaultAdvisorAutoProxyCreator.png)
+![AnnotationAwareAspectJAutoProxyCreator](/assets/img/AnnotationAwareAspectJAutoProxyCreator.png)
 
 ---
 
@@ -302,3 +302,7 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 [Understanding Auto-configured Beans](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-understanding-auto-configured-beans)
 
 [Java SPI思想梳理](https://zhuanlan.zhihu.com/p/28909673)
+
+[Spring AOP 使用介绍，从前世到今生](https://www.javadoop.com/post/spring-aop-intro)
+
+[Spring AOP 源码解析](https://javadoop.com/post/spring-aop-source)
