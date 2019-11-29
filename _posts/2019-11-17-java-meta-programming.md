@@ -278,6 +278,10 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 
 ## JMX
 
+实现在 `java.lang.management`和 `javax.management`包。
+
+![JMX](/assets/img/JMX.gif)
+
 ---
 
 ## Agent
@@ -315,3 +319,7 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 [Spring AOP 使用介绍，从前世到今生](https://www.javadoop.com/post/spring-aop-intro)
 
 [Spring AOP 源码解析](https://javadoop.com/post/spring-aop-source)
+
+[JMX超详细解读](https://www.cnblogs.com/dongguacai/p/5900507.html)
+
+[Getting Started with Java Management Extensions (JMX): Developing Management and Monitoring Solutions](https://www.oracle.com/technical-resources/articles/javase/jmx.html)
