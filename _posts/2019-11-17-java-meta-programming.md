@@ -282,6 +282,38 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 
 ![JMX](/assets/img/JMX.gif)
 
+如上图所示，JMX分为3个层次：
+
+### Instrumentation
+
+> An MBean is a managed Java object, similar to a JavaBeans component, that follows the design patterns set forth in the JMX specification. An MBean can represent a device, an application, or any resource that needs to be managed. 
+
+MBean，被管理的资源。JMX定义了5中MBean：
+
+| 类型           | 描述                                                         |
+| -------------- | ------------------------------------------------------------ |
+| Standard MBean | 由MBean接口（接口命名以MBean结尾）和实现组成。管理的资源定义在接口中，类似于Java Bean。 |
+| Dynamic MBean  | 实现`javax.management.DynamicMBean`接口，所有属性、方法都在运行时决定。 |
+| Open MBean     |                                                              |
+| Model MBean    |                                                              |
+| MXBean         |                                                              |
+
+
+
+### JMX Agent
+
+MBeanServer，提供对资源的注册和管理。
+
+### Remote Management
+
+提供远程访问的入口。
+
+jconsole
+
+HtmlAdaptorServer
+
+RMI
+
 ---
 
 ## Agent
