@@ -288,31 +288,64 @@ Spring Boot的自动配置采用了类似的策略：[Understanding Auto-configu
 
 > An MBean is a managed Java object, similar to a JavaBeans component, that follows the design patterns set forth in the JMX specification. An MBean can represent a device, an application, or any resource that needs to be managed. 
 
-MBean，被管理的资源。JMX定义了5中MBean：
+`MBean`即被管理的资源。JMX定义了5种MBean（~~后三种缺少文档暂未找到样例~~）：
 
 | 类型           | 描述                                                         |
 | -------------- | ------------------------------------------------------------ |
-| Standard MBean | 由MBean接口（接口命名以MBean结尾）和实现组成。管理的资源定义在接口中，类似于Java Bean。 |
+| Standard MBean | 由MBean接口和实现组成。管理的资源定义在接口中，类似于Java Bean。接口命名以MBean结尾，如MBean为Hello，则接口必须为HelloMBean。 |
 | Dynamic MBean  | 实现`javax.management.DynamicMBean`接口，所有属性、方法都在运行时决定。 |
 | Open MBean     |                                                              |
 | Model MBean    |                                                              |
 | MXBean         |                                                              |
 
-
-
 ### JMX Agent
 
-MBeanServer，提供对资源的注册和管理。
+`MBeanServer`提供对资源的注册和管理，可以通过`java.lang.management.ManagementFactory`的静态方法获取。通常使用[getPlatformMBeanServer](https://docs.oracle.com/javase/7/docs/api/java/lang/management/ManagementFactory.html#getPlatformMBeanServer())。
+
+JVM提供了一些内置的MBeanServer[参见](https://docs.oracle.com/javase/7/docs/api/java/lang/management/ManagementFactory.html)。
+
+用户自己编写的MBean注册到MBeanService上需要使用`ObjectName`。它对命名有一定规则：
+
+> An ObjectName can be written as a String with the following elements in order:
+>
+> - The domain.
+> - A colon (`:`).
+> - A key property list as defined below.
 
 ### Remote Management
 
-提供远程访问的入口。
+提供远程访问的入口。主要有如下三种：
 
-jconsole
+#### jconsole
 
-HtmlAdaptorServer
+直接把MBean注册到MBeanServer上通过jconsole访问。
 
-RMI
+#### HtmlAdaptorServer
+
+通过HTML页面访问：
+
+```java
+MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+
+HtmlAdaptorServer adapter = new HtmlAdaptorServer();
+adapterName = new ObjectName("SimpleAgent:name=htmladapter,port=8000");
+mbs.registerMBean(adapter, adapterName);
+
+adapter.setPort(8000);
+adapter.start();
+```
+
+
+
+#### RMI
+
+将MBean发布到服务中，通过RMI访问。
+
+```java
+JMXServiceURL url = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://localhost:9999/server"); 
+JMXConnectorServer cs = JMXConnectorServerFactory.newJMXConnectorServer(url, null, mbs);
+cs.start();
+```
 
 ---
 
@@ -355,3 +388,5 @@ RMI
 [JMX超详细解读](https://www.cnblogs.com/dongguacai/p/5900507.html)
 
 [Getting Started with Java Management Extensions (JMX): Developing Management and Monitoring Solutions](https://www.oracle.com/technical-resources/articles/javase/jmx.html)
+
+[Java Management Extensions (JMX)](https://docs.oracle.com/javase/tutorial/jmx/index.html)
