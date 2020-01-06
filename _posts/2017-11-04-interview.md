@@ -1,8 +1,8 @@
 ---
 
 title: 2017年的面试
-category: ['面试']
-tags: ['面试']
+category: ['生活']
+tags: ['生活']
 author: jyjsjd
 email: jyjsjd@hotmail.com
 description: 2017年的面试
